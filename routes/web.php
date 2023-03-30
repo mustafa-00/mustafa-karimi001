@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\PostController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,7 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('admin');
     Route::resource('about', AboutController::class);
     Route::get('contact', [ContactController::class, 'index']);
+    Route::resource('post',PostController::class);
 });
 
 //auth section route--------
