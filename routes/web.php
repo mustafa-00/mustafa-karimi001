@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
@@ -20,8 +21,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 //admin section routes------
-Route::get('admin', [DashboardController::class, 'index']);
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/', [DashboardController::class, 'index']);
+    Route::get('about', [AboutController::class, 'index']);
+});
 
 //auth section route--------
 Route::get('login', [LoginController::class, 'index']);
