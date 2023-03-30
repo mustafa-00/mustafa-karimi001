@@ -34,3 +34,4 @@ Route::group(['prefix' => 'admin'], function(){
 Route::get('login', [LoginController::class, 'index']);
 Route::get('register', [RegisterController::class, 'index']);
 
+
