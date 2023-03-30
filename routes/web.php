@@ -25,8 +25,8 @@ Route::get('/', function () {
 
 //admin section routes------
 Route::group(['prefix' => 'admin'], function(){
-    Route::get('/', [DashboardController::class, 'index']);
-    Route::get('about', [AboutController::class, 'index']);
+    Route::get('/', [DashboardController::class, 'index'])->name('admin');
+    Route::resource('about', AboutController::class);
     Route::get('contact', [ContactController::class, 'index']);
 });
 
