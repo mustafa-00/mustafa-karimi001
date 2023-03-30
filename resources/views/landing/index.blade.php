@@ -1,4 +1,4 @@
-@extends('landing.index')
+@extends('landing.layouts.index')
 
 @section('contents')
 

@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [LandingController::class, 'index']);
 
 
 //admin section routes------
@@ -35,4 +34,6 @@ Route::group(['prefix' => 'admin'], function(){
 Route::get('login', [LoginController::class, 'index']);
 Route::get('register', [RegisterController::class, 'index']);
 
+//Landing section routes-------
+Route::get('/', [LandingController::class, 'index']);
 
