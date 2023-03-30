@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -19,9 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin', function(){
-    return view('admin.index');
-});
+//admin section routes------
+Route::get('admin', [DashboardController::class, 'index']);
 
 //auth section route--------
 Route::get('login', [LoginController::class, 'index']);
