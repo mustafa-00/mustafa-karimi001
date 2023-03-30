@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AboutController;
+use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
@@ -26,6 +27,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/', [DashboardController::class, 'index']);
     Route::get('about', [AboutController::class, 'index']);
+    Route::get('contact', [ContactController::class, 'index']);
 });
 
 //auth section route--------
