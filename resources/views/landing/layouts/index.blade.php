@@ -119,7 +119,7 @@
   <script src="{{asset('assets_landing/vendor/php-email-form/validate.js')}}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{{asset('assets_ladning/js/main.js')}}"></script>
+  <script src="{{asset('assets_landing/js/main.js')}}"></script>
 
 </body>
 
