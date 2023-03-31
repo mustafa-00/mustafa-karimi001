@@ -2,7 +2,7 @@
 
 @section('contents')
 
-<main id="main">
+
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
       <div class="container">
@@ -504,5 +504,5 @@
       </div>
     </section><!-- End Frequently Asked Questions Section -->
 
-  </main>
+
 @endsection
