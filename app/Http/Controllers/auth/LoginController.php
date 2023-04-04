@@ -11,4 +11,25 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
+
+    public function login(Request $request)
+    {
+
+        $request -> validate([
+            'email' => 'required|email|min:10|max:255',
+            'password' => 'required'
+        ]);
+
+        // return dd(request()->all());
+
+        if(!auth()->attempt(['email' => $request->email, 'password' => $request->password])){
+            return back();
+        }
+
+        else{
+            auth()->attempt(['email' => $request->email, 'password' => $request->password, $request->remember]);
+            return redirect('admin');
+        }
+
+    }
 }
