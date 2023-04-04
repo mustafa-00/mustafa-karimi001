@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin'], function(){
 //auth section route--------
 Route::get('login', [LoginController::class, 'index']);
 Route::get('register', [RegisterController::class, 'index']);
+Route::post('register/user', [RegisterController::class, 'register'])->name('register.user');
 
 //Landing section routes-------
 Route::get('/', [LandingController::class, 'index']);
