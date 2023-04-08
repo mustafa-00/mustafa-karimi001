@@ -37,6 +37,7 @@ Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register/user', [RegisterController::class, 'register'])->name('register.user');
 
 //Landing section routes-------
+Route::get('/', [LandingController::class, 'index']);
 Route::get('home', [LandingController::class, 'index'])->name('home');
 Route::get('about', [LandingController::class, 'about'])->name('about');
 Route::get('services', [LandingController::class, 'services'])->name('services');
