@@ -1,11 +1,11 @@
 @extends('landing.layouts.index')
 
-@include('landing.layouts.partials.hero')
+{{-- @include('landing.layouts.partials.hero') --}}
 
 @section('contents')
 
 
-    <!-- ======= Featured Services Section ======= -->
+    {{-- <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
       <div class="container">
 
@@ -42,9 +42,9 @@
         </div>
 
       </div>
-    </section><!-- End Featured Services Section -->
+    </section><!-- End Featured Services Section --> --}}
 
-    <!-- ======= About Us Section ======= -->
+    {{-- <!-- ======= About Us Section ======= -->
     <section id="about" class="about pt-0">
       <div class="container" data-aos="fade-up">
 
@@ -85,9 +85,9 @@
         </div>
 
       </div>
-    </section><!-- End About Us Section -->
+    </section><!-- End About Us Section --> --}}
 
-    <!-- ======= Services Section ======= -->
+    {{-- <!-- ======= Services Section ======= -->
     <section id="service" class="services pt-0">
       <div class="container" data-aos="fade-up">
 
@@ -162,7 +162,7 @@
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section><!-- End Services Section --> --}}
 
     <!-- ======= Call To Action Section ======= -->
     <section id="call-to-action" class="call-to-action">
@@ -179,7 +179,7 @@
       </div>
     </section><!-- End Call To Action Section -->
 
-    <!-- ======= Features Section ======= -->
+    {{-- <!-- ======= Features Section ======= -->
     <section id="features" class="features">
       <div class="container">
 
@@ -254,9 +254,9 @@
         </div><!-- Features Item -->
 
       </div>
-    </section><!-- End Features Section -->
+    </section><!-- End Features Section --> --}}
 
-    <!-- ======= Pricing Section ======= -->
+    {{-- <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing pt-0">
       <div class="container" data-aos="fade-up">
 
@@ -316,9 +316,9 @@
         </div>
 
       </div>
-    </section><!-- End Pricing Section -->
+    </section><!-- End Pricing Section --> --}}
 
-    <!-- ======= Testimonials Section ======= -->
+    {{-- <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
       <div class="container">
 
@@ -410,9 +410,9 @@
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section><!-- End Testimonials Section --> --}}
 
-    <!-- ======= Frequently Asked Questions Section ======= -->
+    {{-- <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq">
       <div class="container" data-aos="fade-up">
 
@@ -504,7 +504,6 @@
         </div>
 
       </div>
-    </section><!-- End Frequently Asked Questions Section -->
-
+    </section><!-- End Frequently Asked Questions Section --> --}}
 
 @endsection

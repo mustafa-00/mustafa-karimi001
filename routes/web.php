@@ -41,6 +41,9 @@ Route::get('/', [LandingController::class, 'index']);
 Route::get('home', [LandingController::class, 'index'])->name('home');
 Route::get('about', [LandingController::class, 'about'])->name('about');
 Route::get('services', [LandingController::class, 'services'])->name('services');
+// Route::get('packing', [LandingController::class, 'packing'])->name('packing');
+// Route::get('services', [LandingController::class, 'services'])->name('services');
+// Route::get('services', [LandingController::class, 'services'])->name('services');
 Route::get('pricing', [LandingController::class, 'pricing'])->name('pricing');
 Route::get('contact', [LandingController::class, 'contact'])->name('contact');
 

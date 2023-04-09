@@ -22,6 +22,11 @@ class LandingController extends Controller
         return view('landing.services');
     }
 
+    // public function packing()
+    // {
+    //     return view('landing.packing');
+    // }
+
     public function pricing()
     {
         return view('landing.pricing');

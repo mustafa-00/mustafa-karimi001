@@ -45,6 +45,12 @@
 
   <!-- End Header -->
 
+  {{-- hero section start --}}
+
+   @include('landing.layouts.partials.hero')
+
+  {{-- hero section end --}}
+
   {{-- ====main==== --}}
   <main id="main">
 
