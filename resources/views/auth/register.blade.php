@@ -27,7 +27,7 @@
   <link href="{{asset('assets_admin/vendor/simple-datatables/style.css')}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="{{asset('assets_admin/css/style.css')}}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin
