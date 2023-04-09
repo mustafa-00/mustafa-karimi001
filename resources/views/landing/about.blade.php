@@ -88,7 +88,7 @@
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
-      <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/page-header.jpg');">
+      <div class="page-header d-flex align-items-center" style="background-image: url('assets_landing/img/page-header.jpg');">
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
@@ -114,7 +114,7 @@
 
         <div class="row gy-4">
           <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            <img src="assets_landing_landing/img/about.jpg" class="img-fluid" alt="">
             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
           </div>
           <div class="col-lg-6 content order-last  order-lg-first">
@@ -204,7 +204,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="member">
-              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+              <img src="assets_landing/img/team/team-1.jpg" class="img-fluid" alt="">
               <div class="member-content">
                 <h4>Walter White</h4>
                 <span>Web Development</span>
@@ -223,7 +223,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="member">
-              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+              <img src="assets_landing/img/team/team-2.jpg" class="img-fluid" alt="">
               <div class="member-content">
                 <h4>Sarah Jhinson</h4>
                 <span>Marketing</span>
@@ -242,7 +242,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="member">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+              <img src="assets_landing/img/team/team-3.jpg" class="img-fluid" alt="">
               <div class="member-content">
                 <h4>William Anderson</h4>
                 <span>Content</span>
@@ -273,7 +273,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <img src="assets_landing/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <div class="stars">
@@ -289,7 +289,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <img src="assets_landing/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
                 <div class="stars">
@@ -305,7 +305,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <img src="assets_landing/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
                 <div class="stars">
@@ -321,7 +321,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <img src="assets_landing/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
                 <div class="stars">
@@ -337,7 +337,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <img src="assets_landing/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
                 <div class="stars">
