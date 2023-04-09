@@ -11,7 +11,7 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{{route('home')}}" class="active">Home</a></li>
+          <li><a href="{{route('home')}}">Home</a></li>
           <li><a href="{{route('about')}}">About</a></li>
           <li><a href="{{route('services')}}">Services</a></li>
           <li><a href="{{route('pricing')}}">Pricing</a></li>

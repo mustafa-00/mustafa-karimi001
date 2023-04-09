@@ -20,7 +20,7 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        return dd(request()->all());
+        // return dd(request()->all());
 
         if(!auth()->attempt(['email' => $request->email, 'password' => $request->password])){
             return back();

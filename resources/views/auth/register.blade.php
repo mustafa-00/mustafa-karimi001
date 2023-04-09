@@ -67,7 +67,7 @@
                   <form class="row g-3" action="{{route('register.user')}}" method="POST">
                     @csrf
                     <div class="col-12">
-                      <label for="yourName" class="form-label">Your Name</label>
+                      <label for="yourName" class="form-label">Name</label>
                       <input type="text" name="name" class="form-control" id="yourName" value="{{old('name')}}">
                       @error('name')
                       <div class="alert alert-danger">{{$message}}</div>
@@ -75,7 +75,7 @@
                     </div>
 
                     <div class="col-12">
-                      <label for="yourEmail" class="form-label">Your Email</label>
+                      <label for="yourEmail" class="form-label">Email</label>
                       <input type="email" name="email" class="form-control" id="yourEmail" value="{{old('email')}}">
                        @error('email')
                        <div class="alert alert-danger">{{$message}}</div>
