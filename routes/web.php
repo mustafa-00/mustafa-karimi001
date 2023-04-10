@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //admin section routes------
-Route::group(['prefix' => 'admin', 'middleware' => 'auth' ], function(){
+Route::group(['prefix' => 'admin'], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('admin');
     Route::resource('about', AboutController::class);
     Route::resource('contact', ContactController::class);
@@ -31,19 +31,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth' ], function(){
 });
 
 //auth section route--------
-Route::get('login', [LoginController::class, 'index'])->name('login');
-Route::post('login/user', [LoginController::class, 'login'])->name('login.user');
-Route::get('register', [RegisterController::class, 'index'])->name('register');
-Route::post('register/user', [RegisterController::class, 'register'])->name('register.user');
+
 
 //Landing section routes-------
 Route::get('/', [LandingController::class, 'index']);
 Route::get('home', [LandingController::class, 'index'])->name('home');
 Route::get('about', [LandingController::class, 'about'])->name('about');
 Route::get('services', [LandingController::class, 'services'])->name('services');
-// Route::get('packing', [LandingController::class, 'packing'])->name('packing');
-// Route::get('services', [LandingController::class, 'services'])->name('services');
-// Route::get('services', [LandingController::class, 'services'])->name('services');
 Route::get('pricing', [LandingController::class, 'pricing'])->name('pricing');
 Route::get('contact', [LandingController::class, 'contact'])->name('contact');
 
