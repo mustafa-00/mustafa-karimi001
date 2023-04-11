@@ -18,19 +18,34 @@
       <div class="row mb-3">
             <div class="d-flex col-md-12">
                 <div class="form-floating mb-1 col-md-6 p-2">
-                    <input type="email" name="icon" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="text" name="icon" class="form-control" id="floatingInput" placeholder="name@example.com">
                     <label for="floatingInput">Icon</label>
+                    @error('icon')
+                        <div class="alert alert-danger">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="form-floating mb-1 col-md-6 p-2">
-                    <input type="password" name="tittle" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="text" name="tittle" class="form-control" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Tittle</label>
+                    @error('tittle')
+                        <div class="alert alert-danger">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
             </div>
 
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-1">
                 <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px;"></textarea>
                 <label for="floatingTextarea">description</label>
+                @error('description')
+                    <div class="alert alert-danger">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
             <button class="btn btn-primary m-1 w-100">Save</button>
        </div>
