@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //admin section routes------
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+Route::group(['prefix' => 'admin'], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('admin');
     Route::resource('about', AboutController::class);
     Route::resource('contact', ContactController::class);
