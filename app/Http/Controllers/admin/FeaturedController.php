@@ -7,6 +7,8 @@ use App\Http\Requests\FeaturedValidation;
 use App\Models\Featured;
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\Promise\all;
+
 class FeaturedController extends Controller
 {
     /**
@@ -14,7 +16,8 @@ class FeaturedController extends Controller
      */
     public function index()
     {
-        return view('admin.featured.index');
+        $featured = Featured::all();
+        return view('admin.featured.index' , compact('featured'));
     }
 
     /**
@@ -63,6 +66,8 @@ class FeaturedController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // dd($id);
+        Featured::find($id)->delete();
+        return back();
     }
 }

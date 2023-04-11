@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\landing;
 
 use App\Http\Controllers\Controller;
+use App\Models\Featured;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -19,7 +20,8 @@ class LandingController extends Controller
 
     public function services()
     {
-        return view('landing.services');
+        $featured = Featured::all();
+        return view('landing.services', compact('featured'));
     }
 
     // public function packing()

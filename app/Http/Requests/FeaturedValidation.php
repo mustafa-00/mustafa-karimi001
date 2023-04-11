@@ -23,8 +23,8 @@ class FeaturedValidation extends FormRequest
     {
         return [
             'icon' => 'required|min:1|max:255',
-            'tittle' => 'required|min:1|max:255',
-            'description' => 'required|min:1|max:255'
+            'tittle' => 'required|min:5|max:255',
+            'description' => 'required|min:5|max:255'
         ];
     }
 }

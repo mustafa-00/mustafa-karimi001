@@ -18,7 +18,7 @@
       <div class="row mb-3">
             <div class="d-flex col-md-12">
                 <div class="form-floating mb-1 col-md-6 p-2">
-                    <input type="text" name="icon" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="text" name="icon" class="form-control" id="floatingInput" placeholder="name@example.com" value="{{old('icon')}}">
                     <label for="floatingInput">Icon</label>
                     @error('icon')
                         <div class="alert alert-danger">
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="form-floating mb-1 col-md-6 p-2">
-                    <input type="text" name="tittle" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="text" name="tittle" class="form-control" id="floatingPassword" placeholder="Password" value="{{old('tittle')}}">
                     <label for="floatingPassword">Tittle</label>
                     @error('tittle')
                         <div class="alert alert-danger">
@@ -39,7 +39,7 @@
             </div>
 
             <div class="form-floating mb-1">
-                <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px;"></textarea>
+                <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px;" value="{{old('description')}}"></textarea>
                 <label for="floatingTextarea">description</label>
                 @error('description')
                     <div class="alert alert-danger">
@@ -55,40 +55,34 @@
    <div class="card">
     <div class="card-body">
       <!-- Table with hoverable rows -->
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Icon</th>
-            <th scope="col">Tittle</th>
-            <th scope="col">Description</th>
-            <th scope="col">Start Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Brandon Jacob</td>
-            <td>Designer</td>
-            <td>28</td>
-            <td>2016-05-25</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Bridie Kessler</td>
-            <td>Developer</td>
-            <td>35</td>
-            <td>2014-12-05</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Ashleigh Langosh</td>
-            <td>Finance</td>
-            <td>45</td>
-            <td>2011-08-12</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Icon</th>
+                    <th scope="col">Tittle</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Start Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($featured as $key=> $item)
+                <tr>
+                    <th scope="row">{{$key+1}}</th>
+                    <td>{{$item->icon}}</td>
+                    <td>{{$item->tittle}}</td>
+                    <td>{{$item->description}}</td>
+                    <td class="d-flex">
+                        <form action="{{route('featured.destroy', ['featured' => $item->id])}}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger">DELTE</button>
+                        </form>
+                    <button class="btn btn-primary">EDIT</button></td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
       <!-- End Table with hoverable rows -->
 
     </div>
