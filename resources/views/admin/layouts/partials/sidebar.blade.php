@@ -8,10 +8,17 @@
           <span>Dashboard</span>
         </a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('about.index')}}">
           <i class="bi bi-grid"></i>
           <span>About</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('featured.index')}}">
+          <i class="bi bi-grid"></i>
+          <span>Featured</span>
         </a>
       </li>
 

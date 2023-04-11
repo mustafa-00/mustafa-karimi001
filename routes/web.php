@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\FeaturedController;
 use App\Http\Controllers\admin\PostController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
@@ -28,6 +29,7 @@ Route::group(['prefix' => 'admin'], function(){
     Route::resource('about', AboutController::class);
     Route::resource('contact', ContactController::class);
     Route::resource('post',PostController::class);
+    Route::resource('featured',FeaturedController::class);
 });
 
 //auth section route--------
