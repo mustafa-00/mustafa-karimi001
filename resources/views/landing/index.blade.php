@@ -1,6 +1,5 @@
 @extends('landing.layouts.index')
 
-{{-- @include('landing.layouts.partials.hero') --}}
 
 @section('contents')
 
