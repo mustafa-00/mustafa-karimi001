@@ -15,6 +15,7 @@
           <span>About</span>
         </a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('featured.index')}}">
           <i class="bi bi-grid"></i>
@@ -22,7 +23,12 @@
         </a>
       </li>
 
-
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('Action.index') }}">
+          <i class="bi bi-grid"></i>
+          <span>Action</span>
+        </a>
+      </li>
 
     </ul>
 
