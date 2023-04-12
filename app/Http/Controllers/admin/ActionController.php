@@ -12,7 +12,8 @@ class ActionController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.Action.index');
+
     }
 
     /**
@@ -28,7 +29,14 @@ class ActionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        dd($request->all());
+
+        $request->validate([
+            'tittel' => 'required|min:5|max:255',
+            'description' => 'required|min:5|max:255'
+        ]);
+
     }
 
     /**
