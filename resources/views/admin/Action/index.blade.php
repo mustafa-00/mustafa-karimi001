@@ -21,22 +21,77 @@
         @csrf
         <div class="col-md-12 p-2">
           <div class="form-floating">
-            <input type="text" name="tittle" class="form-control" id="floatingName">
-            <label for="floatingName">Tittel</label>
+            <input type="text" name="tittle" class="form-control" id="floatingName" value="{{old('tittle')}}">
+            <label for="floatingName">Tittle</label>
+            @error('tittle')
+                <div class= "alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
           </div>
         </div>
         <div class="col-md-12">
           <div class="form-floating">
-            <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px;"></textarea>
-              <label for="floatingtexteara">Description</label>
+            <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px" value="{{old('description')}}"></textarea>
+            <label for="floatingtexteara">Description</label>
+            @error('description')
+                <div class = "alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
           </div>
         </div>
 
         <div class="text-center p-2">
           <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="reset" class="btn btn-secondary">Reset</button>
         </div>
       </form><!-- End floating Labels Form -->
+
+    </div>
+  </div>
+
+
+  {{-- Table --}}
+  <div class="card p-2">
+    <div class="card-body">
+      <h5 class="card-title">Table with hoverable rows</h5>
+
+      <!-- Table with hoverable rows -->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Position</th>
+            <th scope="col">Age</th>
+            <th scope="col">Start Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Brandon Jacob</td>
+            <td>Designer</td>
+            <td>28</td>
+            <td>2016-05-25</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Bridie Kessler</td>
+            <td>Developer</td>
+            <td>35</td>
+            <td>2014-12-05</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Ashleigh Langosh</td>
+            <td>Finance</td>
+            <td>45</td>
+            <td>2011-08-12</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- End Table with hoverable rows -->
 
     </div>
   </div>

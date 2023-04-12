@@ -30,12 +30,19 @@ class ActionController extends Controller
     public function store(Request $request)
     {
 
-        dd($request->all());
-
+        //validation
         $request->validate([
             'tittel' => 'required|min:5|max:255',
             'description' => 'required|min:5|max:255'
         ]);
+
+        dd($request->all());
+        //storing data into database
+        // Action::create($request->all());
+
+
+
+
 
     }
 
