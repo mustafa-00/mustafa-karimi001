@@ -13,40 +13,39 @@
     </nav>
   </div>
 
-<div class="card">
-    <div class="card-body m-3 p-2">
+  {{-- form --}}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Vertical Form</h5>
 
-      <!-- Floating Labels Form -->
-      <form action="{{ route('Action.store') }}" method="POST">
+      <!-- Vertical Form -->
+      <form class="row g-3" method="POST" action="{{route('Action.store')}}">
         @csrf
-        <div class="col-md-12 p-2">
-          <div class="form-floating">
-            <input type="text" name="tittle" class="form-control" id="floatingName" value="{{old('tittle')}}">
-            <label for="floatingName">Tittle</label>
-            @error('tittle')
-                <div class= "alert alert-danger">
-                    {{ $message }}
-                </div>
-            @enderror
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="form-floating">
-            <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px" value="{{old('description')}}"></textarea>
-            <label for="floatingtexteara">Description</label>
-            @error('description')
-                <div class = "alert alert-danger">
-                    {{ $message }}
-                </div>
-            @enderror
-          </div>
+
+        <div class="col-12">
+            <input type="text" name="tittle" class="form-control" id="inputNanme4" value="{{old('tittle')}}">
+          <label for="inputNanme4" class="form-label">Tittle</label>
+          @error('tittle')
+            <div class="alert alert-danger">
+                {{$message}}
+            </div>
+          @enderror
         </div>
 
-        <div class="text-center p-2">
+        <div class="col-12">
+            <textarea type="text" name="description" class="form-control" id="inputEmail4" value="{{old('description')}}"></textarea>
+          <label for="inputEmail4" class="form-label">Description</label>
+          @error('description')
+            <div class="alert alert-danger">
+                {{$message}}
+            </div>
+          @enderror
+        </div>
+
+        <div class="text-center">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-      </form><!-- End floating Labels Form -->
-
+      </form>
     </div>
   </div>
 
@@ -67,28 +66,18 @@
             <th scope="col">Start Date</th>
           </tr>
         </thead>
+
+        {{-- This foreach will display us the data of database in the table --}}
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Brandon Jacob</td>
-            <td>Designer</td>
-            <td>28</td>
-            <td>2016-05-25</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Bridie Kessler</td>
-            <td>Developer</td>
-            <td>35</td>
-            <td>2014-12-05</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Ashleigh Langosh</td>
-            <td>Finance</td>
-            <td>45</td>
-            <td>2011-08-12</td>
-          </tr>
+            @foreach ($action as $key=> $item)
+            <tr>
+              <th scope="row">{{$key+1}}</th>
+              <td>{{$item->tittle}}</td>
+              <td>{{$item->description}}</td>
+              <td><button class="btn btn-danger">DELETE</button></td>
+              <td><button class="btn btn-primary">EDIT</button></td>
+            </tr>
+            @endforeach
         </tbody>
       </table>
       <!-- End Table with hoverable rows -->

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Action;
 use Illuminate\Http\Request;
 
 class ActionController extends Controller
@@ -12,7 +13,11 @@ class ActionController extends Controller
      */
     public function index()
     {
-        return view('admin.Action.index');
+
+
+        //3:we are getting data from model and then we will display that on the table-----------------
+        $action = Action::all();
+        return view('admin.Action.index', compact('action'));
 
     }
 
@@ -30,19 +35,18 @@ class ActionController extends Controller
     public function store(Request $request)
     {
 
-        //validation
+        // dd($request->all());
+
+        //1:validation section-------------------
         $request->validate([
-            'tittel' => 'required|min:5|max:255',
-            'description' => 'required|min:5|max:255'
+            'tittle' => 'required|min:5|max:255',
+            'description' => 'required|min:10|max:255'
         ]);
 
-        dd($request->all());
-        //storing data into database
-        // Action::create($request->all());
 
-
-
-
+        // 2:storing data into database---------------------
+        Action::create($request->all());
+        return back();
 
     }
 

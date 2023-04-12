@@ -4,13 +4,16 @@ namespace App\Http\Controllers\landing;
 
 use App\Http\Controllers\Controller;
 use App\Models\Featured;
+use App\Models\Action;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
     public function index()
     {
-        return view('landing.index');
+        //we get the data from database and display that to the landing page------------
+        $action = Action::all();
+        return view('landing.index', compact('action'));
     }
 
     public function about()
