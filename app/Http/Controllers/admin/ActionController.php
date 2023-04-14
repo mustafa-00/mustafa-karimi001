@@ -79,6 +79,8 @@ class ActionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // dd($id);
+        Action::find($id)->delete();
+        return back();
     }
 }

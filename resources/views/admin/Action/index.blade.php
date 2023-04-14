@@ -74,7 +74,13 @@
               <th scope="row">{{$key+1}}</th>
               <td>{{$item->tittle}}</td>
               <td>{{$item->description}}</td>
-              <td><button class="btn btn-danger">DELETE</button></td>
+              <td>
+                <form action="{{ route('Action.destroy' ,['Action' => $item->id]) }}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button class="btn btn-danger">DELETE</button>
+                </form>
+              </td>
               <td><button class="btn btn-primary">EDIT</button></td>
             </tr>
             @endforeach
