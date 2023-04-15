@@ -11,7 +11,7 @@
         <li class="breadcrumb-item active">Action</li>
       </ol>
     </nav>
-  </div>
+</div>
 
   {{-- form --}}
   <div class="card">

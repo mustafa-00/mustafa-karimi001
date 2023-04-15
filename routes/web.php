@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\admin\AboutUsController;
+use App\Http\Controllers\admin\about\AboutUsController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\ActionController;
 use App\Http\Controllers\admin\DashboardController;
@@ -30,7 +30,7 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('admin');
 
     Route::resource('contact', ContactController::class);
-    Route::resource('about', AboutController::class);
+    Route::resource('about', AboutUsController::class);
     Route::resource('post',PostController::class);
     Route::resource('featured',FeaturedController::class);
     Route::resource('Action',ActionController::class);
