@@ -16,39 +16,65 @@
       <h5 class="card-title">AboutUs Form</h5>
 
       <!-- Floating Labels Form -->
-      <form class="row g-3">
+      <form class="row g-1" method="POST" action="{{route('about.store')}}">
+        @csrf
         <div class="col-md-12">
           <div class="form-floating">
-            <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="Your Name">
+            <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="Your Name" value="{{old('tittle')}}">
             <label for="floatingName">Tittle</label>
+            @error('tittle')
+                <div class="alert alert-danger">
+                    {{$message}}
+                </div>
+            @enderror
           </div>
         </div>
 
         <div class="col-md-12">
           <div class="form-floating">
-            <textarea name="description" class="form-control" id="floatingEmail" placeholder="Your Email"tex></textarea>
+            <textarea name="description" class="form-control" id="floatingEmail" placeholder="Your Email"tex></textarea value="{{old('description')}}">
             <label for="floatingEmail">Description</label>
+            @error('description')
+                <div class="alert alert-danger">
+                    {{$message}}
+                </div>
+            @enderror
           </div>
         </div>
 
         <div class="col-md-12">
           <div class="form-floating">
-            <input type="text" name="icon" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="text" name="icon" class="form-control" id="floatingPassword" placeholder="Password" value="{{old('icon')}}">
             <label for="floatingPassword">Icon</label>
+            @error('icon')
+                <div class="alert alert-danger">
+                    {{$message}}
+                </div>
+            @enderror
           </div>
         </div>
 
         <div class="col-12">
           <div class="form-floating">
-            <input type="text" name="Subtittle" class="form-control" placeholder="Address" id="floatingTextarea" style="height: 100px;">
+            <input type="text" name="Subtittle" class="form-control" placeholder="Address" id="floatingTextarea" style="height: 100px;" value="{{old('Subtittle')}}">
             <label for="floatingTextarea">SubTittle</label>
+            @error('Subtittle')
+                <div class="alert alert-danger">
+                    {{$message}}
+                </div>
+            @enderror
           </div>
         </div>
 
         <div class="col-md-12">
             <div class="form-floating">
-              <textarea name="Subdescription" class="form-control" id="floatingEmail" placeholder="Your Email"tex></textarea>
+              <textarea name="Subdescription" class="form-control" id="floatingEmail" placeholder="Your Email"tex></textarea value="{{old('Subdescription')}}">
               <label for="floatingEmail">SubDescription</label>
+              @error('Subdescription')
+                <div class="alert alert-danger">
+                    {{$message}}
+                </div>
+            @enderror
             </div>
           </div>
 
