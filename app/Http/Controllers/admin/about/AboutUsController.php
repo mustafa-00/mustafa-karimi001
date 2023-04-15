@@ -13,6 +13,7 @@ class AboutUsController extends Controller
      */
     public function index()
     {
+        // 4:displaying data into admin/aboutus data table-------------
         $aboutus = AboutUs::all();
         return view('admin.about.aboutus',compact('aboutus'));
     }
@@ -74,6 +75,8 @@ class AboutUsController extends Controller
      */
     public function destroy(string $id)
     {
+
+        // deleteing data from database---------------
         AboutUs::find($id)->delete();
         return back();
     }
