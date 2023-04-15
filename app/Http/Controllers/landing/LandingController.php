@@ -19,8 +19,8 @@ class LandingController extends Controller
 
     public function about()
     {
-        $aboutus = AboutUs::all();
-        return view('landing.about', compact('aboutus'));
+
+        return view('landing.about');
     }
 
     public function services()

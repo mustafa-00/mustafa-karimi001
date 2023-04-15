@@ -18,7 +18,7 @@
       <!-- Floating Labels Form -->
       <form class="row g-1" method="POST" action="{{route('about.store')}}">
         @csrf
-        <div class="col-md-12">
+        {{-- <div class="col-md-12">
           <div class="form-floating">
             <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="Your Name" value="{{old('tittle')}}">
             <label for="floatingName">Tittle</label>
@@ -28,9 +28,9 @@
                 </div>
             @enderror
           </div>
-        </div>
+        </div> --}}
 
-        <div class="col-md-12">
+        {{-- <div class="col-md-12">
           <div class="form-floating">
             <textarea name="description" class="form-control" id="floatingEmail" placeholder="Your Email"tex></textarea value="{{old('description')}}">
             <label for="floatingEmail">Description</label>
@@ -40,7 +40,7 @@
                 </div>
             @enderror
           </div>
-        </div>
+        </div> --}}
 
         <div class="col-md-12">
           <div class="form-floating">
@@ -107,8 +107,8 @@
           @foreach ($aboutus as $key => $item)
             <tr>
                 <th scope="row">{{$key+1}}</th>
-                <td>{{$item->tittle}}</td>
-                <td>{{$item->description}}</td>
+                {{-- <td>{{$item->tittle}}</td> --}}
+                {{-- <td>{{$item->description}}</td> --}}
                 <td>{{$item->icon}}</td>
                 <td>{{$item->Subtittle}}</td>
                 <td>{{$item->Subdescription}}</td>
