@@ -58,7 +58,7 @@
           <div class="form-floating">
             <input type="text" name="Subtittle" class="form-control" placeholder="Address" id="floatingTextarea" style="height: 100px;" value="{{old('Subtittle')}}">
             <label for="floatingTextarea">SubTittle</label>
-            @error('Subtittle')
+            @error('')
                 <div class="alert alert-danger">
                     {{$message}}
                 </div>
@@ -68,9 +68,9 @@
 
         <div class="col-md-12">
             <div class="form-floating">
-              <textarea name="Subdescription" class="form-control" id="floatingEmail" placeholder="Your Email"tex></textarea value="{{old('Subdescription')}}">
+              <textarea name="Subdescription" class="form-control" id="floatingEmail" placeholder="Your Email"tex></textarea value="{{old('Subdescriptionp')}}">
               <label for="floatingEmail">SubDescription</label>
-              @error('Subdescription')
+            @error('Subdescription')
                 <div class="alert alert-danger">
                     {{$message}}
                 </div>
@@ -104,50 +104,27 @@
         </thead>
 
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Brandon Jacob</td>
-            <td>Designer</td>
-            <td>28</td>
-            <td>2016-05-25</td>
-            <td>2016-05-25</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Bridie Kessler</td>
-            <td>Developer</td>
-            <td>35</td>
-            <td>2014-12-05</td>
-            <td>2014-12-05</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Ashleigh Langosh</td>
-            <td>Finance</td>
-            <td>45</td>
-            <td>2011-08-12</td>
-            <td>2011-08-12</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Angus Grady</td>
-            <td>HR</td>
-            <td>34</td>
-            <td>2012-06-11</td>
-            <td>2012-06-11</td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>Raheem Lehner</td>
-            <td>Dynamic Division Officer</td>
-            <td>47</td>
-            <td>2011-04-19</td>
-            <td>2011-04-19</td>
-          </tr>
+          @foreach ($aboutus as $key => $item)
+            <tr>
+                <th scope="row">{{$key+1}}</th>
+                <td>{{$item->tittle}}</td>
+                <td>{{$item->description}}</td>
+                <td>{{$item->icon}}</td>
+                <td>{{$item->Subtittle}}</td>
+                <td>{{$item->Subdescription}}</td>
+                <td>
+                    <form action="{{route('about.destroy',['about' => $item->id]) }}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-danger">DELETE</button>
+                    </form>
+                </td>
+                <td><button class="btn btn-primary">EDIT</button></td>
+            </tr>
+          @endforeach
         </tbody>
       </table>
     </div>
 </div>
-
 
 @endsection

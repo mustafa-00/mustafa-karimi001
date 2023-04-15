@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin\AboutControllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\AboutUs;
 use Illuminate\Http\Request;
 
 class AboutUsController extends Controller
@@ -12,7 +13,9 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        return view('admin.about.AboutUs');
+        // 4:displaying data in the data table------------
+        $aboutus = AboutUs::all();
+        return view('admin.about.AboutUs', compact('aboutus'));
     }
 
     /**
@@ -28,7 +31,21 @@ class AboutUsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
+
+        // 1:validation part-----------------
+        $request->validate([
+            'tittle' => 'required|min:3|max:255',
+            'description' => 'required|min:5|max:255',
+            'icon' => 'required|min:1|max:255',
+            'Subtittle' => 'required|min:3|max:255',
+            'Subdescription' => 'required|min:5|max:255'
+
+        ]);
+
+        // 2:storing data into database--------------
+        AboutUs::create($request->all());
+        return back();
     }
 
     /**
@@ -60,6 +77,9 @@ class AboutUsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // dd($id);
+
+        AboutUs::find($id)->delelte();
+        return back();
     }
 }
