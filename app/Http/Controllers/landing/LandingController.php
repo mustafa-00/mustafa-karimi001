@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\landing;
 
 use App\Http\Controllers\Controller;
+use App\Models\AboutUs;
 use App\Models\Featured;
 use App\Models\Action;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class LandingController extends Controller
 
     public function about()
     {
-        return view('landing.about');
+        $aboutus = AboutUs::all();
+        return view('landing.about', compact('aboutus'));
     }
 
     public function services()
