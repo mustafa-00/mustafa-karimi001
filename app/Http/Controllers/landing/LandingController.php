@@ -11,7 +11,7 @@ class LandingController extends Controller
 {
     public function index()
     {
-        //we get the data from database and display that to the landing page------------
+        //4:we get the data from database and display that to the landing page------------
         $action = Action::all();
         return view('landing.index', compact('action'));
     }
