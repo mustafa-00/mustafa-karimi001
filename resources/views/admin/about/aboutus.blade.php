@@ -63,5 +63,42 @@
       </form>
       <!-- End floating Labels Form -->
     </div>
+</div>
+
+
+<!-- Table with hoverable rows -->
+<div class="card">
+        <div class="card-body">
+        <h5 class="card-title">Table with hoverable rows</h5>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ICON</th>
+                <th scope="col">TITTLE</th>
+                <th scope="col">DESCRIPTION</th>
+                <th scope="col">DELETE</th>
+                <th scope="col">EDIT</th>
+            </tr>
+            </thead>
+
+            <tbody>
+                @foreach ($aboutus as $key => $item)
+                    <tr>
+                        <th scope="row">{{$key+1}}</th>
+                        <td>{{$item->icon}}</td>
+                        <td>{{$item->tittle}}</td>
+                        <td>{{$item->description}}</td>
+                        <form action="{{route('about.destroy',['about' => $item->id])}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <th scope="col"><button class="btn btn-danger">DELETE</button></th>
+                        </form>
+                        <th scope="col"><button class="btn btn-primary">EDIT</button></th>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        </div>
   </div>
 @endsection

@@ -13,7 +13,8 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        return view('admin.about.aboutus');
+        $aboutus = AboutUs::all();
+        return view('admin.about.aboutus',compact('aboutus'));
     }
 
     /**
@@ -32,7 +33,7 @@ class AboutUsController extends Controller
         // dd($request->all());
         // 1:validation part-----------------
         $request->validate([
-            'icon' => 'required|min:1|max:255',
+            'icon' => 'required|min:5|max:255',
             'tittle' => 'required|min:5|max:255',
             'description' => 'required|min:10|max:255'
         ]);
@@ -73,6 +74,7 @@ class AboutUsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        AboutUs::find($id)->delete();
+        return back();
     }
 }
