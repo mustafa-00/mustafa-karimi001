@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\landing;
 
 use App\Http\Controllers\Controller;
-use App\Models\AboutUs;
 use App\Models\Featured;
 use App\Models\Action;
 use Illuminate\Http\Request;

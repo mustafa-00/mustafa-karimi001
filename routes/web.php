@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\admin\AboutControllers\AboutUsController;
+use App\Http\Controllers\admin\AboutUsController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\ActionController;
 use App\Http\Controllers\admin\DashboardController;
@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\PostController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\landing\LandingController;
+use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,8 +28,9 @@ use Illuminate\Support\Facades\Route;
 //admin section routes------
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('admin');
-    Route::resource('about', AboutUsController::class);
+
     Route::resource('contact', ContactController::class);
+    Route::resource('about', AboutController::class);
     Route::resource('post',PostController::class);
     Route::resource('featured',FeaturedController::class);
     Route::resource('Action',ActionController::class);
