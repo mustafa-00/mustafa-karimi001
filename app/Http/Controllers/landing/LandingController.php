@@ -23,7 +23,7 @@ class LandingController extends Controller
 
         $question = Question::all();
         $aboutus = AboutUs::all();
-        return view('landing.about.index', compact('aboutus','question'));
+        return view('landing.about.about_index', compact('aboutus','question'));
     }
 
     public function services()
@@ -31,7 +31,7 @@ class LandingController extends Controller
         $question = Question::all();
         $featured = Featured::all();
         $aboutus = AboutUs::all();
-        return view('landing.services', compact('featured','question','aboutus'));
+        return view('landing.servicess.service_index', compact('featured','question','aboutus'));
     }
 
     // public function packing()
