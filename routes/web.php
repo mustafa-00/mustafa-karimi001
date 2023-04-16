@@ -29,7 +29,6 @@ use Illuminate\Support\Facades\Route;
 //admin section routes------
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('admin');
-
     Route::resource('about', AboutUsController::class);
     Route::resource('question', QuestionController::class);
     Route::resource('contact', ContactController::class);
