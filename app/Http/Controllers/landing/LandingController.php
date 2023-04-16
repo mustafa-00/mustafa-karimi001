@@ -15,7 +15,7 @@ class LandingController extends Controller
     {
         //4:we get the data from database and display that to the landing page------------
         $action = Action::all();
-        return view('landing.index', compact('action'));
+        return view('landing.home_index', compact('action'));
     }
 
     public function about()
@@ -46,6 +46,6 @@ class LandingController extends Controller
 
     public function contact()
     {
-        return view('landing.contact');
+        return view('landing.contact.contact_index');
     }
 }
