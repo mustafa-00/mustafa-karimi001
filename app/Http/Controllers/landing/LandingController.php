@@ -41,7 +41,7 @@ class LandingController extends Controller
 
     public function pricing()
     {
-        return view('landing.pricing');
+        return view('landing.pricing.pricing_index');
     }
 
     public function contact()

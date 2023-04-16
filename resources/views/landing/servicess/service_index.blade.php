@@ -2,43 +2,23 @@
 
 @section('contents')
 
-<main id="main">
+    <main id="main">
 
-<!-- ======= Breadcrumbs ======= -->
-<div class="breadcrumbs">
-    <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/page-header.jpg');">
-    <div class="container position-relative">
-        <div class="row d-flex justify-content-center">
-        <div class="col-lg-6 text-center">
-            <h2>Services</h2>
-            <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-        </div>
-        </div>
-    </div>
-    </div>
-    <nav>
-    <div class="container">
-        <ol>
-        <li><a href="index.html">Home</a></li>
-        <li>Services</li>
-        </ol>
-    </div>
-    </nav>
-</div>
-<!-- End Breadcrumbs -->
+        <!-- ======= Breadcrumbs ======= -->
+        @include('landing.servicess.partials.breadcrump')
 
-<!-- ======= Featured Services Section ======= -->
-@include('landing.servicess.partials.featured')
+        <!-- ======= Featured Services Section ======= -->
+        @include('landing.servicess.partials.featured')
 
-<!-- ======= Services Section ======= -->
-@include('landing.servicess.partials.services')
+        <!-- ======= Services Section ======= -->
+        @include('landing.servicess.partials.services')
 
-<!-- ======= Features Section ======= -->
-@include('landing.servicess.partials.feature')>
+        <!-- ======= Features Section ======= -->
+        @include('landing.servicess.partials.feature')>
 
-<!-- ======= Frequently Asked Questions Section ======= -->
-@include('landing.servicess.partials.freAskQues')
+        <!-- ======= Frequently Asked Questions Section ======= -->
+        @include('landing.servicess.partials.freAskQues')
 
-</main>
+    </main>
 
 @endsection
