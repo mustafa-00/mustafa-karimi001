@@ -1,48 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('landing.about.index')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Logis Bootstrap Template - Services</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="{{asset('assets_landing/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('assets_landing/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{{asset('assets_landing/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('assets_landing/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-  <link href="{{asset('assets_landing/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
-  <link href="{{asset('assets_landing/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
-  <link href="{{asset('assets_landing/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
-  <link href="{{asset('assets_landing/vendor/aos/aos.css')}}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{{asset('assets_landing/css/main.css')}}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Logis
-  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+@section('contents')
 
 <body>
+    <!-- ======= Header ======= -->
+    @include('landing.layouts.partials.header')
+    <!-- End Header -->
 
-  <!-- ======= Header ======= -->
-  @include('landing.layouts.partials.header')
-  <!-- End Header -->
 
   <main id="main">
 
@@ -332,56 +296,6 @@
       </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <span>Frequently Asked Questions</span>
-          <h2>Frequently Asked Questions</h2>
-        </div>
-
-        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-10">
-            <div class="accordion accordion-flush" id="faqlist">
-              @foreach ($question as $item)
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
-                        <i class="bi bi-question-circle question-icon"></i>
-                        {{ $item->question }}
-                    </button>
-                    </h3>
-                    <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                    <div class="accordion-body">
-                        {{ $item->answer }}
-                    </div>
-                    </div>
-                </div>
-              @endforeach
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Frequently Asked Questions Section -->
-
-
-    {{-- call to action start --}}
-    <section id="call-to-action" class="call-to-action">
-        <div class="container" data-aos="zoom-out">
-
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-              <h3>Call To Action</h3>
-              <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a class="cta-btn" href="#">Call To Action</a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-    {{-- call to action end --}}
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -404,5 +318,4 @@
   <script src="{{asset('assets_landing/js/main.js')}}"></script>
 
 </body>
-
-</html>
+@endsection

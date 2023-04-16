@@ -47,7 +47,6 @@
 
   {{-- hero section start --}}
 
-   @include('landing.layouts.partials.hero')
 
   {{-- hero section end --}}
 

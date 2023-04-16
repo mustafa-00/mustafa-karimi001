@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Featured;
 use App\Models\Action;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -20,14 +21,17 @@ class LandingController extends Controller
     public function about()
     {
 
+        $question = Question::all();
         $aboutus = AboutUs::all();
-        return view('landing.about', compact('aboutus'));
+        return view('landing.about.index', compact('aboutus','question'));
     }
 
     public function services()
     {
+        $question = Question::all();
         $featured = Featured::all();
-        return view('landing.services', compact('featured'));
+        $aboutus = AboutUs::all();
+        return view('landing.services', compact('featured','question','aboutus'));
     }
 
     // public function packing()
