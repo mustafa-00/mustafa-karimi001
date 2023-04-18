@@ -4,7 +4,7 @@
       <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
 
         <div class="col-md-5">
-          <img src="assets/img/features-1.jpg" class="img-fluid" alt="">
+          <img src="assets_landing/img/features-1.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-md-7">
           <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
@@ -22,7 +22,7 @@
 
       <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
         <div class="col-md-5 order-1 order-md-2">
-          <img src="assets/img/features-2.jpg" class="img-fluid" alt="">
+          <img src="assets_landing/img/features-2.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-md-7 order-2 order-md-1">
           <h3>Corporis temporibus maiores provident</h3>
@@ -40,7 +40,7 @@
 
       <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
         <div class="col-md-5">
-          <img src="assets/img/features-3.jpg" class="img-fluid" alt="">
+          <img src="assets_landing/img/features-3.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-md-7">
           <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
@@ -55,7 +55,7 @@
 
       <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
         <div class="col-md-5 order-1 order-md-2">
-          <img src="assets/img/features-4.jpg" class="img-fluid" alt="">
+          <img src="assets_landing/img/features-4.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-md-7 order-2 order-md-1">
           <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
