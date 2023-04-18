@@ -3,7 +3,6 @@
 @section('contents')
 
     <main id="main">
-
         <!-- ======= Breadcrumbs ======= -->
         @include('landing.servicess.partials.breadcrump')
 
@@ -15,10 +14,6 @@
 
         <!-- ======= Features Section ======= -->
         @include('landing.servicess.partials.feature')>
-
-        <!-- ======= Frequently Asked Questions Section ======= -->
-        @include('landing.servicess.partials.freAskQues')
-
     </main>
 
 @endsection
