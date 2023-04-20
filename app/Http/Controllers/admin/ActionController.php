@@ -17,7 +17,7 @@ class ActionController extends Controller
 
         //3:we are getting data from model and then we will display that on the table-----------------
         $action = Action::all();
-        return view('admin.Action.index', compact('action'));
+        return view('admin.home.action', compact('action'));
 
     }
 

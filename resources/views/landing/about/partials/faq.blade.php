@@ -11,15 +11,15 @@
                       <div class="accordion accordion-flush" id="faqlist{{ $key }}">
                           <div class="accordion-item">
                               <h3 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1{{ $key }}">
-                                  <i class="bi bi-question-circle question-icon"></i>
-                                  {{ $item->question }}
-                              </button>
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1{{ $key }}">
+                                    <i class="bi bi-question-circle question-icon"></i>
+                                    {{ $item->question }}
+                                </button>
                               </h3>
                               <div id="faq-content-1{{ $key }}" class="accordion-collapse collapse" data-bs-parent="#faqlist{{ $key }}">
-                              <div class="accordion-body">
-                                  {{ $item->answer }}
-                              </div>
+                                <div class="accordion-body">
+                                    {{ $item->answer }}
+                                </div>
                               </div>
                           </div>
                       </div>
