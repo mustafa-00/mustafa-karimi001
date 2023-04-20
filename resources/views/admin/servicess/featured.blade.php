@@ -33,7 +33,7 @@
                     @error('tittle')
                         <div class="alert alert-danger">
                             {{$message}}
-                        </div>
+                    </div>
                     @enderror
                 </div>
             </div>

@@ -17,7 +17,7 @@ class FeaturedController extends Controller
     public function index()
     {
         $featured = Featured::all();
-        return view('admin.featured.index' , compact('featured'));
+        return view('admin.servicess.featured' , compact('featured'));
     }
 
     /**
