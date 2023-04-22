@@ -59,13 +59,14 @@
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
                     <p class="text-center small">Enter your username & password to login</p>
+                    @include('common.alert')
                   </div>
 
                   <form class="row g-3 needs-validation" action="{{ route('login.user') }}" method="POST">
                     @csrf
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Email</label>
-                      <input type="email" name="email" class="form-control" id="yourUsername">
+                      <input type="email" name="email" class="form-control" id="yourUsername" value="{{ old('email') }}">
                         @error('email')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -75,7 +76,7 @@
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword">
+                      <input type="password" name="password" class="form-control" id="yourPassword" value="{{ old('password') }}">
                         @error('password')
                             <div class="alert alert-danger">
                                 {{ $message }}
