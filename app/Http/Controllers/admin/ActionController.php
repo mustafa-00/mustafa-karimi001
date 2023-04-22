@@ -43,7 +43,6 @@ class ActionController extends Controller
             'description' => 'required|min:10|max:255'
         ]);
 
-
         // 2:storing data into database---------------------
         Action::create($request->all());
         return back();
