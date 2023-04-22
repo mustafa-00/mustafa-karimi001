@@ -10,24 +10,24 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('assets_landing/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('assets_landing/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link href="{{ asset('assets_admin/img/favicon.png') }}" rel="icon">
+  <link href="{{ asset('assets_admin/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{{asset('assets_landing/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('assets_landing/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-  <link href="{{asset('assets_landing/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('assets_landing/vendor/quill/quill.snow.css')}}" rel="stylesheet">
-  <link href="{{asset('assets_landing/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
-  <link href="{{asset('assets_landing/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
-  <link href="{{asset('assets_landing/vendor/simple-datatables/style.css')}}" rel="stylesheet">
+  <link href="{{ asset('assets_admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets_admin/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets_admin/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets_admin/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets_admin/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets_admin/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets_admin/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{{asset('assets_landing/css/style.css')}}" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -37,9 +37,6 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
-<body>
-
   <main>
     <div class="container">
 
@@ -64,29 +61,27 @@
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
-                  <form action="{{route('login.user')}}" method="POST">
+                  <form class="row g-3 needs-validation" action="{{ route('login.user') }}" method="POST">
                     @csrf
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Email</label>
-                      <div class="input-group has-validation">
-                        <input type="email" name="email" class="form-control" id="yourUsername" value="{{old('email')}}">
+                      <input type="email" name="email" class="form-control" id="yourUsername">
                         @error('email')
-                        ‍  <div class="alert alert-danger">
-                            {{$message}}
-                          </div>
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
                         @enderror
-                      </div>
                     </div>
 
-                      <div class="col-12">
-                        <label for="yourPassword" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="yourPassword" value="{{ old('password') }}">
-                      </div>
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Password</label>
+                      <input type="password" name="password" class="form-control" id="yourPassword">
                         @error('password')
-                          <div class="alert alert-danger">
-                            {{ $message }}
-                          </div>
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
                         @enderror
+                    </div>
 
                     <div class="col-12">
                       <div class="form-check">
@@ -98,7 +93,7 @@
                       <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
                     <div class="col-12">
-                      <p class="small mb-0">Don't have account? <a href="{{route('register')}}">Create an account</a></p>
+                      <p class="small mb-0">Don't have account? <a href="{{ route('register') }}">Create an account</a></p>
                     </div>
                   </form>
 
@@ -125,18 +120,15 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="{{asset('assets_admin/vendor/apexcharts/apexcharts.min.js')}}"></script>
-  <script src="{{asset('assets_admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('assets_admin/vendor/chart.js/chart.umd.js')}}"></script>
-  <script src="{{asset('assets_admin/vendor/echarts/echarts.min.js')}}"></script>
-  <script src="{{asset('assets_admin/vendor/quill/quill.min.js')}}"></script>
-  <script src="{{asset('assets_admin/vendor/simple-datatables/simple-datatables.js')}}"></script>
-  <script src="{{asset('assets_admin/vendor/tinymce/tinymce.min.js')}}"></script>
-  <script src="{{asset('assets_admin/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{ asset('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/chart.js/chart.umd.js') }}"></script>
+  <script src="{{ asset('assets/vendor/echarts/echarts.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/quill/quill.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+  <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{{asset('assets_admin/js/main.js')}}"></script>
-
-</body>
-
+  <script src="{{ asset('assets/js/main.js') }}"></script>
 </html>

@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //admin section routes------
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('admin');
     Route::resource('about', AboutUsController::class);
     Route::resource('question', QuestionController::class);
@@ -43,6 +43,7 @@ Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('register/user', [RegisterController::class, 'register'])->name('register.user');
 Route::post('login/user', [LoginController::class, 'login'])->name('login.user');
+Route::post('logout', [LogoutController::class, 'logout'])->name('logout');
 
 
 //Landing section routes-------
