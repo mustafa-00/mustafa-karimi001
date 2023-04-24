@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\admin\about\AboutUsController;
 use App\Http\Controllers\admin\about\QuestionController;
-use App\Http\Controllers\admin\ContactController;
-use App\Http\Controllers\admin\ActionController;
+use App\Http\Controllers\admin\contact\ContactController;
+use App\Http\Controllers\admin\home\ActionController;
 use App\Http\Controllers\admin\DashboardController;
-use App\Http\Controllers\admin\FeaturedController;
+use App\Http\Controllers\admin\services\FeaturedController;
 use App\Http\Controllers\admin\PostController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;

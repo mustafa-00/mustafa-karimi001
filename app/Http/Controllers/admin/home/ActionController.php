@@ -1,18 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\admin\home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Action;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class ActionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.post.index');
+
+
+        //3:we are getting data from model and then we will display that on the table-----------------
+        $action = Action::all();
+        return view('admin.home.action', compact('action'));
+
     }
 
     /**
@@ -28,7 +34,20 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // dd($request->all());
+
+        //1:validation section-------------------
+        $request->validate([
+            'tittle' => 'required|min:5|max:255',
+            'description' => 'required|min:10|max:255'
+        ]);
+
+        // 2:storing data into database---------------------
+        Action::create($request->all());
+        session()->flash('success','Record has been saved successfuly!');
+        return back();
+
     }
 
     /**
@@ -60,6 +79,9 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // dd($id);
+        Action::find($id)->delete();
+        session()->flash('error','Record has been deleted successfuly!');
+        return back();
     }
 }
