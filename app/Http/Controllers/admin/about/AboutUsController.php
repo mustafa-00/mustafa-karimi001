@@ -42,6 +42,7 @@ class AboutUsController extends Controller
 
         // 2:storing data into database--------------
         AboutUs::create($request->all());
+        session()->flash('success','Record has been saved successfuly!');
         return back();
 
     }
@@ -78,6 +79,7 @@ class AboutUsController extends Controller
 
         // deleteing data from database---------------
         AboutUs::find($id)->delete();
+        session()->flash('error','Record has been deleted successfuly!');
         return back();
     }
 }

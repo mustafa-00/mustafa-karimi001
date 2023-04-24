@@ -34,6 +34,7 @@ class FeaturedController extends Controller
     public function store(FeaturedValidation $request)
     {
         Featured::create($request->all());
+        session()->flash('success','Record has been saved successfuly!');
         return back();
     }
 
@@ -68,6 +69,7 @@ class FeaturedController extends Controller
     {
         // dd($id);
         Featured::find($id)->delete();
+        session()->flash('error','Record has been deleted successfuly!');
         return back();
     }
 }

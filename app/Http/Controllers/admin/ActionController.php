@@ -45,6 +45,7 @@ class ActionController extends Controller
 
         // 2:storing data into database---------------------
         Action::create($request->all());
+        session()->flash('success','Record has been saved successfuly!');
         return back();
 
     }
@@ -80,6 +81,7 @@ class ActionController extends Controller
     {
         // dd($id);
         Action::find($id)->delete();
+        session()->flash('error','Record has been deleted successfuly!');
         return back();
     }
 }

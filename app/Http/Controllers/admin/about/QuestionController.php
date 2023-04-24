@@ -41,6 +41,7 @@ class QuestionController extends Controller
 
         // 2:storing data into database--------------------
         Question::create($request->all());
+        session()->flash('success','Record has been saved successfuly!');
         return back();
 
 
@@ -77,6 +78,7 @@ class QuestionController extends Controller
     {
         // 4:deleteing button------------
         Question::find($id)->delete();
+        session()->flash('error','Record has been deleted successfuly!');
         return back();
     }
 }

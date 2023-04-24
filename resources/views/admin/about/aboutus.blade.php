@@ -2,6 +2,8 @@
 
 @section('contents')
 
+@include('common.alert')
+
 <div class="pagetitle">
     <h1>Action Page</h1>
     <nav>

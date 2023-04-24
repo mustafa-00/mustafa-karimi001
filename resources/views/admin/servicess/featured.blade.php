@@ -2,6 +2,8 @@
 
 @section('contents')
 
+@include('common.alert')
+
 <div class="pagetitle">
     <h1>Featured Page</h1>
     <nav>
@@ -58,11 +60,12 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">number</th>
                     <th scope="col">Icon</th>
                     <th scope="col">Tittle</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Start Date</th>
+                    <th scope="col">DELETE</th>
+                    <th scope="col">EDIT</th>
                 </tr>
             </thead>
             <tbody>
@@ -72,13 +75,12 @@
                     <td>{{$item->icon}}</td>
                     <td>{{$item->tittle}}</td>
                     <td>{{$item->description}}</td>
-                    <td class="d-flex">
                         <form action="{{route('featured.destroy', ['featured' => $item->id])}}" method="POST">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger">DELTE</button>
+                           <th scope="col"><button class="btn btn-danger">DELTE</button></th>
                         </form>
-                    <button class="btn btn-primary">EDIT</button></td>
+                    <th scope="col"><button class="btn btn-primary">EDIT</button></th>
                 </tr>
                 @endforeach
             </tbody>

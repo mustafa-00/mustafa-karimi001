@@ -3,6 +3,8 @@
 
 @section('contents')
 
+@include('common.alert')
+
 <div class="pagetitle">
     <h1>FrequentQuestion Page</h1>
     <nav>
