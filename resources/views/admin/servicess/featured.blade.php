@@ -15,12 +15,16 @@
   </div>
 
 
-  <form action="{{route('featured.store')}}" method="POST">
+  <form action="{{ isset($featured) ? route('featured.update',['featured' => $featured->id]) : route('featured.store') }}" method="POST">
     @csrf
+
+    @if (isset($featured))
+        @method('put')
+    @endif
       <div class="row mb-3">
             <div class="d-flex col-md-12">
                 <div class="form-floating mb-1 col-md-6 p-2">
-                    <input type="text" name="icon" class="form-control" id="floatingInput" placeholder="name@example.com" value="{{old('icon')}}">
+                    <input type="text" name="icon" class="form-control" id="floatingInput" placeholder="name@example.com" value="{{ isset($featured) ? $featured->icon : old('icon')}}">
                     <label for="floatingInput">Icon</label>
                     @error('icon')
                         <div class="alert alert-danger">
@@ -30,7 +34,7 @@
                 </div>
 
                 <div class="form-floating mb-1 col-md-6 p-2">
-                    <input type="text" name="tittle" class="form-control" id="floatingPassword" placeholder="Password" value="{{old('tittle')}}">
+                    <input type="text" name="tittle" class="form-control" id="floatingPassword" placeholder="Password" value="{{ isset($featured) ? $featured->tittle : old('tittle')}}">
                     <label for="floatingPassword">Tittle</label>
                     @error('tittle')
                         <div class="alert alert-danger">
@@ -41,7 +45,7 @@
             </div>
 
             <div class="form-floating mb-1">
-                <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px;" value="{{old('description')}}"></textarea>
+                <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px;">{{ isset($featured) ? $featured->description : old('description')}}</textarea>
                 <label for="floatingTextarea">description</label>
                 @error('description')
                     <div class="alert alert-danger">
@@ -49,7 +53,7 @@
                     </div>
                 @enderror
             </div>
-            <button class="btn btn-primary m-1 w-100">Save</button>
+            <button class="btn {{isset($featured) ? 'btn-success' : 'btn-primary'}} m-1 w-100">{{isset($featured) ? 'UPDATE' : 'STORE'}}</button>
        </div>
   </form>
 
@@ -69,7 +73,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($featured as $key=> $item)
+                @foreach ($featureds as $key=> $item)
                 <tr>
                     <th scope="row">{{$key+1}}</th>
                     <td>{{$item->icon}}</td>
@@ -80,7 +84,7 @@
                             @method('delete')
                            <th scope="col"><button class="btn btn-danger">DELTE</button></th>
                         </form>
-                    <th scope="col"><button class="btn btn-primary">EDIT</button></th>
+                    <th scope="col"><a class="btn btn-primary" href= {{route('featured.edit',['featured' => $item->id])}}>EDIT</a></th>
                 </tr>
                 @endforeach
             </tbody>

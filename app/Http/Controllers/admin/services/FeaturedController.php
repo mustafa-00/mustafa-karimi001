@@ -16,8 +16,8 @@ class FeaturedController extends Controller
      */
     public function index()
     {
-        $featured = Featured::all();
-        return view('admin.servicess.featured' , compact('featured'));
+        $featureds = Featured::all();
+        return view('admin.servicess.featured' , compact('featureds'));
     }
 
     /**
@@ -49,17 +49,27 @@ class FeaturedController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Featured $featured)
     {
-        //
+        // dd($featured);
+        $featureds = Featured::all();
+        return view('admin.servicess.featured', compact('featured','featureds'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Featured $featured)
     {
-        //
+        // dd($request->all());
+        $featured->update([
+            'icon' => $request->icon,
+            'tittle' => $request->tittle,
+            'description' => $request->description
+        ]);
+        session()->flash('success','Record has been updated successfuly!');
+        return redirect('admin/featured');
     }
 
     /**
