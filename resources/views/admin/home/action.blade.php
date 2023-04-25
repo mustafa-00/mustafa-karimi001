@@ -21,11 +21,15 @@
       <h5 class="card-title">Vertical Form</h5>
 
       <!-- Vertical Form -->
-      <form class="row g-3" method="POST" action="{{route('Action.store')}}">
+      <form class="row g-3" action="{{ isset($action) ? route('Action.update' , ['Action' => $action->id]) : route('Action.store') }}" method="POST">
         @csrf
 
+        @if(isset($action))
+        @method('put')
+        @endif
+
         <div class="col-12">
-            <input type="text" name="tittle" class="form-control" id="inputNanme4" value="{{old('tittle')}}">
+            <input type="text" name="tittle" class="form-control" id="inputNanme4" value="{{ isset($action) ? $action->tittle : old('tittle') }}">
           <label for="inputNanme4" class="form-label">Tittle</label>
           @error('tittle')
             <div class="alert alert-danger">
@@ -35,7 +39,7 @@
         </div>
 
         <div class="col-12">
-            <textarea type="text" name="description" class="form-control" id="inputEmail4" value="{{old('description')}}"></textarea>
+            <textarea type="text" name="description" class="form-control" id="inputEmail4">{{ isset($action) ? $action->description : old('description')}}</textarea>
           <label for="inputEmail4" class="form-label">Description</label>
           @error('description')
             <div class="alert alert-danger">
@@ -72,7 +76,7 @@
 
         {{-- This foreach will display us the data of database in the table --}}
         <tbody>
-            @foreach ($action as $key=> $item)
+            @foreach ($actions as $key=> $item)
             <tr>
               <th scope="row">{{$key+1}}</th>
               <td>{{$item->tittle}}</td>
@@ -84,7 +88,7 @@
                     <button class="btn btn-danger">DELETE</button>
                 </form>
               </td>
-              <td><button class="btn btn-primary">EDIT</button></td>
+              <td><a class="btn btn-primary" href="{{ route('Action.edit', ['Action' => $item->id]) }}">EDIT</a></td>
             </tr>
             @endforeach
         </tbody>

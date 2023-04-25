@@ -16,8 +16,8 @@ class ActionController extends Controller
 
 
         //3:we are getting data from model and then we will display that on the table-----------------
-        $action = Action::all();
-        return view('admin.home.action', compact('action'));
+        $actions = Action::all();
+        return view('admin.home.action', compact('actions'));
 
     }
 
@@ -61,9 +61,12 @@ class ActionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Action $action)
     {
-        //
+        // dd($id);
+        $actions = Action::all();
+        return view('admin.home.action' , compact('action','actions'));
+
     }
 
     /**
