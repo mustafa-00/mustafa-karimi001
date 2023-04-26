@@ -14,8 +14,8 @@ class QuestionController extends Controller
     public function index()
     {
         // 3:displaying data in question datatable-------------
-        $question = Question::all();
-        return view('admin.about.question',compact('question'));
+        $questions = Question::all();
+        return view('admin.about.question',compact('questions'));
     }
 
     /**
@@ -58,17 +58,25 @@ class QuestionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Question $question)
     {
-        //
+        // dd($id);
+        $questions = Question::all();
+        return view('admin.about.question' , compact('question','questions'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Question $question)
     {
-        //
+        $question->update([
+            'question' => $request->question,
+            'answer' => $request->answer
+        ]);
+        session()->flash('success','Record has been updated succesfuly!');
+        return redirect('admin/question');
+
     }
 
     /**

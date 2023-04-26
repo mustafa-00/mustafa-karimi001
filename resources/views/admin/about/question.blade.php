@@ -20,11 +20,15 @@
 <div class="card-body">
     <h5 class="card-title">Floating labels Form</h5>
 
-    <form class="row g-3" method="POST" action="{{ route('question.store') }}">
+    <form class="row g-3"  action="{{ isset($question) ? route('question.update',['question' => $question->id]) : route('question.store') }}" method="POST">
         @csrf
+        @if(isset($question))
+            @method('put')
+
+        @endif
       <div class="col-md-12">
         <div class="form-floating">
-          <input type="text" name="question" class="form-control" id="floatingName" placeholder="Your Name" value="{{ old('question') }}">
+          <input type="text" name="question" class="form-control" id="floatingName" placeholder="Your Name" value="{{ isset($question) ? $question->question : old('question') }}">
           <label for="floatingName">Question</label>
           @error('question')
             <div class="alert alert-danger">
@@ -36,7 +40,7 @@
 
       <div class="col-12">
         <div class="form-floating">
-          <textarea name="answer" class="form-control" placeholder="Address" id="floatingTextarea" style="height: 100px;" value="{{ old('answer') }}"></textarea>
+          <textarea name="answer" class="form-control" placeholder="Address" id="floatingTextarea" style="height: 100px;">{{ isset($question) ? $question->answer : old('answer') }}</textarea>
           <label for="floatingTextarea">Answer</label>
           @error('answer')
             <div class="alert alert-danger">
@@ -71,7 +75,7 @@
         </thead>
 
         <tbody>
-            @foreach ($question as $key => $item)
+            @foreach ($questions as $key => $item)
                 <tr>
                     <th scope="row">{{ $key+1 }}</th>
                     <td>{{ $item->question }}</td>
@@ -81,7 +85,7 @@
                         @method('delete')
                         <td><button class="btn btn-danger">Delete</button></td>
                     </form>
-                    <td><button class="btn btn-primary">Edit</button></td>
+                    <td><a class="btn btn-primary" href="{{ route('question.edit' , ['question' => $item->id]) }}">Edit</a></td>
                 </tr>
             @endforeach
         </tbody>
