@@ -68,9 +68,14 @@ class AboutUsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, About $aboutus)
     {
-        //
+        $aboutus ->update([
+            'icon' => $request->icon,
+            'tittle' => $request->tittle,
+            'description' => $request->description
+        ]);
+        return redirect('admin/aboutus');
     }
 
     /**

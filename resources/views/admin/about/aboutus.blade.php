@@ -20,11 +20,14 @@
     <div class="card-body">
       <h5 class="card-title">Floating labels Form</h5>
 
-      <form class="row g-1" method="POST" action="{{route('about.store')}}">
+      <form class="row g-1" action="{{ isset($aboutus) ? route('about.update',['aboutus' => $aboutus->id]) : route('about.store') }}" method="POST" >
         @csrf
+        @if(isset($aboutus))
+            @method('put')
+        @endif
           <div class="col-md-12">
             <div class="form-floating">
-              <input type="text" name="icon" class="form-control" id="floatingPassword" placeholder="Password" value="{{ old('icon') }}">
+              <input type="text" name="icon" class="form-control" id="floatingPassword" placeholder="Password" value="{{ isset($aboutus) ? $aboutus->icon : old('icon') }}">
               <label for="floatingPassword">Icon</label>
               @error('icon')
                 <div class="alert alert-danger">
@@ -36,7 +39,7 @@
 
         <div class="col-md-12">
           <div class="form-floating">
-            <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="Your Name" value="{{ old('tittle') }}">
+            <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="Your Name" value="{{ isset($aboutus) ? $aboutus->tittle : old('tittle') }}">
             <label for="floatingName">Tittle</label>
             @error('tittle')
                 <div class="alert alert-danger">
@@ -48,7 +51,7 @@
 
         <div class="col-md-12">
           <div class="form-floating">
-            <textarea name="description" class="form-control" id="floatingEmail" placeholder="Your Email">{{ old('description') }}</textarea>
+            <textarea name="description" class="form-control" id="floatingEmail" placeholder="Your Email">{{ isset($aboutus) ? $aboutus->description : old('description') }}</textarea>
             <label for="floatingEmail">Description</label>
             @error('description')
                 <div class="alert alert-danger">

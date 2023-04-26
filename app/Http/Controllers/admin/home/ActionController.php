@@ -72,13 +72,9 @@ class ActionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Action $action)
+    public function update(Request $request)
     {
-        $action ->update([
-            'tittle' => $request->tittle,
-            'description' => $request->description
-        ]);
-        return redirect('admin/action');
+
     }
 
     /**
