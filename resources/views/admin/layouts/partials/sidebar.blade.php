@@ -38,6 +38,10 @@
             <a href="{{route('question.index')}}">
               <i class="bi bi-circle"></i><span>Questions</span>
             </a>
+
+            <a href="{{route('testimonial.index')}}">
+              <i class="bi bi-circle"></i><span>Testimonial</span>
+            </a>
           </li>
         </ul>
       </li>
