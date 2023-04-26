@@ -51,7 +51,7 @@
       </div>
 
       <div class="text-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn {{ isset($question) ? 'btn-success' : 'btn-primary' }}">{{ isset($question) ? 'UPDATE' : 'STORE' }}</button>
         <button type="reset" class="btn btn-secondary">Reset</button>
       </div>
     </form>

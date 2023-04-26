@@ -14,8 +14,8 @@ class AboutUsController extends Controller
     public function index()
     {
         // 4:displaying data into admin/aboutus data table-------------
-        $aboutus = AboutUs::all();
-        return view('admin.about.aboutus',compact('aboutus'));
+        $aboutuses = AboutUs::all();
+        return view('admin.about.aboutus',compact('aboutuses'));
     }
 
     /**
@@ -58,9 +58,11 @@ class AboutUsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(AboutUs $aboutus)
     {
-        //
+        // dd($id);
+        $aboutuses = AboutUs::all();
+        return view('admin.about.aboutus' , compact('aboutus','aboutuses'));
     }
 
     /**

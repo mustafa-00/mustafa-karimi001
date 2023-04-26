@@ -21,13 +21,8 @@
       <h5 class="card-title">Vertical Form</h5>
 
       <!-- Vertical Form -->
-      <form class="row g-3" action="{{ isset($action) ? route('Action.update' , ['Action' => $action->id]) : route('Action.store') }}" method="POST">
+      <form class="row g-3" action="{{ route('Action.store') }}" method="POST">
         @csrf
-
-        @if(isset($action))
-        @method('put')
-        @endif
-
         <div class="col-12">
             <input type="text" name="tittle" class="form-control" id="inputNanme4" value="{{ isset($action) ? $action->tittle : old('tittle') }}">
           <label for="inputNanme4" class="form-label">Tittle</label>
@@ -39,7 +34,7 @@
         </div>
 
         <div class="col-12">
-            <textarea type="text" name="description" class="form-control" id="inputEmail4">{{ isset($action) ? $action->description : old('description')}}</textarea>
+            <textarea type="text" name="description" class="form-control" id="inputEmail4">{{ isset($action) ? $action->description : old('description') }}</textarea>
           <label for="inputEmail4" class="form-label">Description</label>
           @error('description')
             <div class="alert alert-danger">

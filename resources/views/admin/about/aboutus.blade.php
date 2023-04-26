@@ -5,11 +5,11 @@
 @include('common.alert')
 
 <div class="pagetitle">
-    <h1>Action Page</h1>
+    <h1>AboutUs Page</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">admin</a></li>
-        <li class="breadcrumb-item active">Action</li>
+        <li class="breadcrumb-item active">AboutUs</li>
       </ol>
     </nav>
 </div>
@@ -24,7 +24,7 @@
         @csrf
           <div class="col-md-12">
             <div class="form-floating">
-              <input type="text" name="icon" class="form-control" id="floatingPassword" placeholder="Password" value:{{old('icon')}}>
+              <input type="text" name="icon" class="form-control" id="floatingPassword" placeholder="Password" value="{{ old('icon') }}">
               <label for="floatingPassword">Icon</label>
               @error('icon')
                 <div class="alert alert-danger">
@@ -36,7 +36,7 @@
 
         <div class="col-md-12">
           <div class="form-floating">
-            <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="Your Name" value:{{old('tittle')}}>
+            <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="Your Name" value="{{ old('tittle') }}">
             <label for="floatingName">Tittle</label>
             @error('tittle')
                 <div class="alert alert-danger">
@@ -48,7 +48,7 @@
 
         <div class="col-md-12">
           <div class="form-floating">
-            <textarea name="description" class="form-control" id="floatingEmail" placeholder="Your Email" value:{{old('description')}}></textarea>
+            <textarea name="description" class="form-control" id="floatingEmail" placeholder="Your Email">{{ old('description') }}</textarea>
             <label for="floatingEmail">Description</label>
             @error('description')
                 <div class="alert alert-danger">
@@ -85,7 +85,7 @@
             </thead>
 
             <tbody>
-                @foreach ($aboutus as $key => $item)
+                @foreach ($aboutuses as $key => $item)
                     <tr>
                         <th scope="row">{{$key+1}}</th>
                         <td>{{$item->icon}}</td>
@@ -96,7 +96,7 @@
                             @method('delete')
                             <th scope="col"><button class="btn btn-danger">DELETE</button></th>
                         </form>
-                        <th scope="col"><button class="btn btn-primary">EDIT</button></th>
+                        <th scope="col"><a class="btn btn-primary" href="{{ route('about.edit' ,['about' => $item->id]) }}">EDIT</a></th>
                     </tr>
                 @endforeach
             </tbody>

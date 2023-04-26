@@ -61,20 +61,24 @@ class ActionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Action $action)
+    public function edit( Action $action)
     {
         // dd($id);
         $actions = Action::all();
-        return view('admin.home.action' , compact('action','actions'));
+        return view('admin.home.action' ,compact('action','actions'));
 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Action $action)
     {
-        //
+        $action ->update([
+            'tittle' => $request->tittle,
+            'description' => $request->description
+        ]);
+        return redirect('admin/action');
     }
 
     /**
