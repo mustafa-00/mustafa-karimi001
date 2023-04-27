@@ -24,7 +24,7 @@
       <form class="row g-3" action="{{ route('Action.store') }}" method="POST">
         @csrf
         <div class="col-12">
-            <input type="text" name="tittle" class="form-control" id="inputNanme4" value="{{ isset($action) ? $action->tittle : old('tittle') }}">
+          <input type="text" name="tittle" class="form-control" id="inputNanme4" value="{{ isset($action) ? $action->tittle : old('tittle')}}">
           <label for="inputNanme4" class="form-label">Tittle</label>
           @error('tittle')
             <div class="alert alert-danger">
@@ -34,7 +34,7 @@
         </div>
 
         <div class="col-12">
-            <textarea type="text" name="description" class="form-control" id="inputEmail4">{{ isset($action) ? $action->description : old('description') }}</textarea>
+          <textarea type="text" name="description" class="form-control" id="inputEmail4">{{ isset($action) ? $action->description : old('description')}}</textarea>
           <label for="inputEmail4" class="form-label">Description</label>
           @error('description')
             <div class="alert alert-danger">

@@ -14,8 +14,8 @@ class AboutUsController extends Controller
     public function index()
     {
         // 4:displaying data into admin/aboutus data table-------------
-        $aboutuses = AboutUs::all();
-        return view('admin.about.aboutus',compact('aboutuses'));
+        $abouts = AboutUs::all();
+        return view('admin.about.aboutus',compact('abouts'));
     }
 
     /**
@@ -58,23 +58,24 @@ class AboutUsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AboutUs $aboutus)
+    public function edit(AboutUs $about)
     {
         // dd($id);
-        $aboutuses = AboutUs::all();
-        return view('admin.about.aboutus' , compact('aboutus','aboutuses'));
+        $abouts = AboutUs::all();
+        return view('admin.about.aboutus' , compact('about','abouts'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, About $aboutus)
+    public function update(Request $request, AboutUs $about)
     {
-        $aboutus ->update([
+        $about ->update([
             'icon' => $request->icon,
             'tittle' => $request->tittle,
             'description' => $request->description
         ]);
+        session()->flash('success','Record has been edited succesfuly!');
         return redirect('admin/aboutus');
     }
 
