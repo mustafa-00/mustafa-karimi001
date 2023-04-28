@@ -14,4 +14,13 @@
     </nav>
 </div>
 
+<!-- Table with hoverable rows -->
+<div class="card">
+    <div class="card-body">
+        <div>
+            <h5 class="card-title d-flex">Table with hoverable rows</h5>
+        </div>
+    </div>
+  </div>
+
 @endsection
