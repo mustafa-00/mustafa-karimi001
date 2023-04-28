@@ -19,8 +19,66 @@
     <div class="card-body">
         <div>
             <h5 class="card-title d-flex">Table with hoverable rows</h5>
+            <a class="btn btn-primary" href="{{route('testimonial.index')}}">Testimonial Table</a>
+
+            <form class="row g-3" action="{{route('testimonial.store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <div class="col-md-4">
+                    <div>
+                        <label for="inputName5" class="form-label">photo</label>
+                        <input type="file" name="photo" class="form-control" id="inputName5" value="{{old('photo')}}">
+                    </div>
+                  @error('photo')
+                      <div class="alert alert-danger">
+                          {{$message}}
+                      </div>
+                  @enderror
+                </div>
+
+                <div class="col-md-4">
+                    <div>
+                        <label for="inputName5" class="form-label">name</label>
+                        <input type="text" name="name" class="form-control" id="inputName5" value="{{old('name')}}">
+                    </div>
+                    @error('name')
+                        <div class="alert alert-danger">
+                            {{$message}}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="col-md-4">
+                    <div>
+                        <label for="inputName5" class="form-label">job</label>
+                        <input type="text" name="job" class="form-control" id="inputName5" value="{{old('job')}}">
+                    </div>
+                    @error('job')
+                        <div class="alert alert-danger">
+                            {{$message}}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="col-md-12">
+                    <div>
+                        <label for="inputName5" class="form-label">description</label>
+                        <textarea class="form-control" name="description" id="inputName5">{{old('description')}}</textarea>
+                    </div>
+                    @error('description')
+                        <div class="alert alert-danger">
+                            {{$message}}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </form>
         </div>
     </div>
-  </div>
+</div>
 
 @endsection

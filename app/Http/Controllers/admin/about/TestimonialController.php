@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin\about;
 
 use App\Http\Controllers\Controller;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class TestimonialController extends Controller
@@ -20,7 +21,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.about.Testimonial.form');
     }
 
     /**
@@ -28,7 +29,19 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        $request->validate([
+            'photo' => 'required',
+            'name' => 'required|min:10|max:255',
+            'job' => 'required|min:10|max:255',
+            'description' => 'required|min:10|max:255'
+        ]);
+
+
+
+        // Testimonial::create($request->all());
+        // session()->flash('success','Record has been saved successfuly!');
+        // return back();
     }
 
     /**

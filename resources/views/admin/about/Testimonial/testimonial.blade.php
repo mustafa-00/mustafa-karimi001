@@ -19,7 +19,7 @@
     <div class="card-body">
         <div>
             <h5 class="card-title d-flex">Table with hoverable rows</h5>
-            <a class="btn btn-primary">Create new testimonial</a>
+            <a class="btn btn-primary" href="{{route('testimonial.create')}}">Create new testimonial</a>
         </div>
 
       <table class="table table-hover">
