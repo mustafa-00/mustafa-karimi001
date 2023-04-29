@@ -89,7 +89,7 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
-        @unlink($testimonial->photo);
+        @unlink(public_path().'/'.$testimonial->photo);
         $testimonial->delete();
         session()->flash('error','Record has been deleted successfuly!');
         return back();
