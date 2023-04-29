@@ -13,7 +13,8 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        return view('admin.about.Testimonial.testimonial');
+        $testimonials = Testimonial::all();
+        return view('admin.about.Testimonial.testimonial' , compact('testimonials'));
     }
 
     /**
@@ -29,15 +30,30 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-        $request->validate([
-            'photo' => 'required',
-            'name' => 'required|min:10|max:255',
-            'job' => 'required|min:10|max:255',
-            'description' => 'required|min:10|max:255'
-        ]);
+        $testimonial = new Testimonial();
+        $testimonial['name'] = $request->name;
+        $testimonial['job'] = $request->job;
+        $testimonial['description'] = $request->description;
+
+        if($request->photo){
+            date_default_timezone_set("Asia/Kabul");
+            $fileName = 'testimonial_'.date('Ymd-His').'_'.rand(10,100000).'.'.$request->photo->extension();
+            $request->photo->storeAs('public/testimonial',$fileName);
+            $testimonial['photo'] = "/storage/testimonial/$fileName";
+        }
+        // dd('photo');
+        $testimonial->save();
+        session()->flash('success','Record has been saved successfuly!');
+        return redirect('admin/testimonial');
 
 
+        // dd($request->all());
+        // $request->validate([
+        //     'photo' => 'required',
+        //     'name' => 'required|min:10|max:255',
+        //     'job' => 'required|min:10|max:255',
+        //     'description' => 'required|min:10|max:255'
+        // ]);
 
         // Testimonial::create($request->all());
         // session()->flash('success','Record has been saved successfuly!');
@@ -71,8 +87,11 @@ class TestimonialController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Testimonial $testimonial)
     {
-        //
+        @unlink($testimonial->photo);
+        $testimonial->delete();
+        session()->flash('error','Record has been deleted successfuly!');
+        return back();
     }
 }
