@@ -7,6 +7,7 @@ use App\Models\AboutUs;
 use App\Models\Featured;
 use App\Models\Action;
 use App\Models\Question;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -23,7 +24,8 @@ class LandingController extends Controller
 
         $question = Question::all();
         $aboutus = AboutUs::all();
-        return view('landing.about.about_index', compact('aboutus','question'));
+        $testimonial = Testimonial::all();
+        return view('landing.about.about_index', compact('aboutus','question','testimonial'));
     }
 
     public function services()
