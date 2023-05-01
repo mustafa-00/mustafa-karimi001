@@ -42,6 +42,10 @@
             <a href="{{route('testimonial.index')}}">
               <i class="bi bi-circle"></i><span>Testimonial</span>
             </a>
+
+            <a href="{{route('team_members.index')}}">
+              <i class="bi bi-circle"></i><span>Team_members</span>
+            </a>
           </li>
         </ul>
       </li>

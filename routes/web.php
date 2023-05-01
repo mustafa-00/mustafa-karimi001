@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\about\AboutUsController;
 use App\Http\Controllers\admin\about\QuestionController;
+use App\Http\Controllers\admin\about\Team_membersConroller;
 use App\Http\Controllers\admin\about\TestimonialController;
 use App\Http\Controllers\admin\contact\ContactController;
 use App\Http\Controllers\admin\home\ActionController;
@@ -33,6 +34,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::resource('about', AboutUsController::class);
     Route::resource('question', QuestionController::class);
     Route::resource('testimonial', TestimonialController::class);
+    Route::resource('team_members', Team_membersConroller::class);
     Route::resource('contact', ContactController::class);
     Route::resource('post',PostController::class);
     Route::resource('featured',FeaturedController::class);
