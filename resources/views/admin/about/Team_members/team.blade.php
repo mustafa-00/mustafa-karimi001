@@ -34,15 +34,25 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Brandon Jacob</td>
-            <td>Designer</td>
-            <td>28</td>
-            <td>2016-05-25</td>
-            <td><button class="btn btn-danger">DELETE</button></td>
-            <td><button class="btn btn-primary">EDIT</button></td>
-          </tr>
+            @foreach ($team_memberses as $key => $item)
+                <tr>
+                    <th scope="row">{{$key+1}}</th>
+                    <th scope="row"><img src="{{ $item->photo }}" alt="" width="50px"></th>
+                    <td>{{$item->name}}</td>
+                    <td>{{$item->field}}</td>
+                    <td>{{$item->description}}</td>
+                    <td>
+                        <form action="{{route('team_members.destroy',['team_member' => $item->id])}}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger">DELETE</button>
+                        </form>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary">EDIT</button>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
       </table>
     </div>

@@ -30,6 +30,16 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
+        //validation--------------
+        $request->validate([
+            'photo' => 'required',
+            'name' => 'required|min:10|max:255',
+            'job' => 'required|min:10|max:255',
+            'description' => 'required|min:10|max:255'
+        ]);
+
+
+
         $testimonial = new Testimonial();
         $testimonial['name'] = $request->name;
         $testimonial['job'] = $request->job;
@@ -45,19 +55,6 @@ class TestimonialController extends Controller
         $testimonial->save();
         session()->flash('success','Record has been saved successfuly!');
         return redirect('admin/testimonial');
-
-
-        // dd($request->all());
-        // $request->validate([
-        //     'photo' => 'required',
-        //     'name' => 'required|min:10|max:255',
-        //     'job' => 'required|min:10|max:255',
-        //     'description' => 'required|min:10|max:255'
-        // ]);
-
-        // Testimonial::create($request->all());
-        // session()->flash('success','Record has been saved successfuly!');
-        // return back();
     }
 
     /**

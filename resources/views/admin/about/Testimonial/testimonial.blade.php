@@ -50,7 +50,9 @@
                             <button class="btn btn-danger">DELETE</button>
                         </form>
                     </td>
-                    <td><button class="btn btn-primary">EDIT</button></td>
+                    <td>
+                        <button class="btn btn-primary">EDIT</button>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
