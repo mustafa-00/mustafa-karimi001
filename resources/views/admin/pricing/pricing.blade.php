@@ -22,7 +22,7 @@
         @csrf
         <div class="col-md-6">
           <div class="form-floating">
-            <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="tittle" value="{{old('tittle')}}">
+            <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="tittle" value="{{ isset($pricing) ? $pricing->tittle : old('tittle')}}">
             <label for="floatingName">Tittle</label>
             @error('tittle')
                 <div class="alert alert-danger">
@@ -34,7 +34,7 @@
 
         <div class="col-md-6">
           <div class="form-floating">
-            <input type="number" name="price" class="form-control" id="floatingName" placeholder="price" value="{{old('price')}}">
+            <input type="number" name="price" class="form-control" id="floatingName" placeholder="price" value="{{ isset($pricing) ? $pricing->price : old('price')}}">
             <label for="floatingName">Price</label>
             @error('price')
                 <div class="alert alert-danger">
@@ -46,7 +46,7 @@
 
         <div class="col-md-12">
           <div class="form-floating">
-            <textarea name="description" class="form-control" id="floatingPassword" placeholder="description">{{old('description')}}</textarea>
+            <textarea name="description" class="form-control" id="floatingPassword" placeholder="description">{{ isset($pricing) ? $pricing->description : old('description')}}</textarea>
             <label for="floatingPassword">description</label>
             @error('description')
                 <div class="alert alert-danger">
@@ -91,7 +91,7 @@
                     @method('delete')
                     <td><button class="btn btn-danger">DELETE</button></td>
                 </form>
-                <td><button class="btn btn-primary">EDIT</button></td>
+                <td><a class="btn btn-primary" href="{{route('Pricing.edit',['Pricing'=> $item->id])}}">EDIT</a></td>
                 </tr>
             @endforeach
         </tbody>

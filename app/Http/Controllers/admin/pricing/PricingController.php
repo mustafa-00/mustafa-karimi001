@@ -53,9 +53,11 @@ class PricingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Pricings $pricing )
     {
-        //
+        // dd($id);
+        $pricings = Pricings::all();
+        return view('admin.pricing.pricing',compact('pricing','pricings'));
     }
 
     /**
