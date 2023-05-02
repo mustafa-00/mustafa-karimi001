@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\home\ActionController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\services\FeaturedController;
 use App\Http\Controllers\admin\PostController;
+use App\Http\Controllers\admin\services\OurServicesController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\landing\LandingController;
@@ -38,6 +39,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::resource('contact', ContactController::class);
     Route::resource('post',PostController::class);
     Route::resource('featured',FeaturedController::class);
+    Route::resource('OurServices',OurServicesController::class);
     Route::resource('Action',ActionController::class);
 
 });

@@ -12,7 +12,7 @@
         <li class="breadcrumb-item active">Featured</li>
       </ol>
     </nav>
-  </div>
+</div>
 
 
   <form action="{{ isset($featured) ? route('featured.update',['featured' => $featured->id]) : route('featured.store') }}" method="POST">
