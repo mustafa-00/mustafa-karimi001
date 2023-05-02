@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\home\ActionController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\services\FeaturedController;
 use App\Http\Controllers\admin\PostController;
+use App\Http\Controllers\admin\pricing\PricingController;
 use App\Http\Controllers\admin\services\OurServicesController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
@@ -41,6 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::resource('featured',FeaturedController::class);
     Route::resource('OurServices',OurServicesController::class);
     Route::resource('Action',ActionController::class);
+    Route::resource('Pricing',PricingController::class);
 
 });
 

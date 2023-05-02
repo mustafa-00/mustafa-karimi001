@@ -70,5 +70,20 @@
         </ul>
       </li>
 
+      {{-- PRICING --}}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#pricing-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>pricing</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="pricing-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{route('Pricing.index')}}">
+                  <i class="bi bi-circle"></i>
+                  <span>Pricing</span>
+                </a>
+            </li>
+        </ul>
+      </li>
+
     </ul>
   </aside>

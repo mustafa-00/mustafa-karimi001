@@ -1,8 +1,10 @@
 <section id="features" class="features">
     <div class="container">
-
+        <div class="section-header">
+            <span>Feature</span>
+            <h2>Feature</h2>
+          </div>
       <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
-
         <div class="col-md-5">
           <img src="assets_landing/img/features-1.jpg" class="img-fluid" alt="">
         </div>
