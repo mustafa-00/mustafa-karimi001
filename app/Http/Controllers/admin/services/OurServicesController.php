@@ -40,6 +40,16 @@ class OurServicesController extends Controller
         $OurService = new OurServices();
         $OurService['tittle'] = $request->tittle;
         $OurService['description'] = $request->description;
+        if($request->photo){
+
+            date_default_timezone_set("Asia/Kabul");
+            $fileName = 'OurService_'.date('Ymd-His').'_'.rand(10,10000).'.'.$request->photo->extension();
+            $request->photo->storeAs('public/OurSerivce',$fileName);
+            $OurService['photo'] = "storage/OurService,$fileName";
+        }
+        $OurService->save();
+        session()->flash('success','Record has been saved successfuly!');
+        return redirect('admin/ourservices');
 
 
     }

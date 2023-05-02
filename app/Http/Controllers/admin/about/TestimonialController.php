@@ -38,8 +38,6 @@ class TestimonialController extends Controller
             'description' => 'required|min:10|max:255'
         ]);
 
-
-
         $testimonial = new Testimonial();
         $testimonial['name'] = $request->name;
         $testimonial['job'] = $request->job;
