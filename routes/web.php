@@ -43,6 +43,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::resource('OurServices',OurServicesController::class);
     Route::resource('Action',ActionController::class);
     Route::resource('Pricing',PricingController::class);
+    Route::resource('Contact',ContactController::class);
 
 });
 

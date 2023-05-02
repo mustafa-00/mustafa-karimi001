@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin\contact;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pricings;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -28,7 +30,17 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $request->validate([
+            'icon' => 'required|min:5|max:255',
+            'tittle' => 'required|min:10|max:255',
+            'description' => 'required|min:10|max:255'
+        ]);
+
+        Pricings::Create($request->all());
+        session()->flash('success','Record has been saved successfuly!');
+        return back();
+
     }
 
     /**
