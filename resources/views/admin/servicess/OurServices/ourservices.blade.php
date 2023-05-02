@@ -35,7 +35,7 @@
             @foreach ($OurServices as $key => $item)
                 <tr>
                 <th scope="row">{{$key+1}}</th>
-                <th scope="row"><img src="{{$item->photo}}" alt="" width="50px"></th>
+                <th scope="row"><img src="{{ $item->photo }}" alt="" width="50px"></th>
                 <td>{{$item->tittle}}</td>
                 <td>{{$item->description}}</td>
                 <form action="{{route('OurServices.destroy',['OurService' => $item->id])}}" method="POST">

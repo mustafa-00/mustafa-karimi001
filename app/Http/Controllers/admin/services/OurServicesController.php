@@ -80,8 +80,12 @@ class OurServicesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy()
+    public function destroy(OurServices $OurService)
     {
 
+        @unlink(public_path().'/'.$OurService->photo);
+        $OurService->delete();
+        session()->flash('error','Record has been deleted successfuly!');
+        return back();
     }
 }

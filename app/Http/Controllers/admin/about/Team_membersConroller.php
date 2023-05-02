@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin\about;
 use App\Http\Controllers\Controller;
 use App\Models\Team_members;
 use Illuminate\Http\Request;
+use Spatie\FlareClient\Flare;
 
 class Team_membersConroller extends Controller
 {
