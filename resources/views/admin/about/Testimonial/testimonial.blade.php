@@ -51,7 +51,7 @@
                         </form>
                     </td>
                     <td>
-                        <button class="btn btn-primary">EDIT</button>
+                        <a class="btn btn-primary" href="{{ route('testimonial.edit',['testimonial'=> $item->id]) }}">EDIT</a>
                     </td>
                 </tr>
             @endforeach

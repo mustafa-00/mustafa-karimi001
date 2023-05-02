@@ -27,7 +27,7 @@
                 <div class="col-md-4">
                     <div>
                         <label for="inputName5" class="form-label">photo</label>
-                        <input type="file" name="photo" class="form-control" id="inputName5" value="{{old('photo')}}">
+                        <input type="file" name="photo" class="form-control" id="inputName5" value="{{ isset($testimonial) ? $testimonial->photo : old('photo') }}">
                     </div>
                   @error('photo')
                       <div class="alert alert-danger">
@@ -39,7 +39,7 @@
                 <div class="col-md-4">
                     <div>
                         <label for="inputName5" class="form-label">name</label>
-                        <input type="text" name="name" class="form-control" id="inputName5" value="{{old('name')}}">
+                        <input type="text" name="name" class="form-control" id="inputName5" value="{{ isset($testimonial) ? $testimonial->name : old('name')}}">
                     </div>
                     @error('name')
                         <div class="alert alert-danger">
@@ -51,7 +51,7 @@
                 <div class="col-md-4">
                     <div>
                         <label for="inputName5" class="form-label">job</label>
-                        <input type="text" name="job" class="form-control" id="inputName5" value="{{old('job')}}">
+                        <input type="text" name="job" class="form-control" id="inputName5" value="{{ isset($testimonial) ? $testimonial->job : old('job')}}">
                     </div>
                     @error('job')
                         <div class="alert alert-danger">
@@ -63,7 +63,7 @@
                 <div class="col-md-12">
                     <div>
                         <label for="inputName5" class="form-label">description</label>
-                        <textarea class="form-control" name="description" id="inputName5">{{old('description')}}</textarea>
+                        <textarea class="form-control" name="description" id="inputName5">{{ isset($testimonial) ? $testimonial->description : old('description')}}</textarea>
                     </div>
                     @error('description')
                         <div class="alert alert-danger">

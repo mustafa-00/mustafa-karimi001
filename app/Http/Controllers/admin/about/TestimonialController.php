@@ -68,9 +68,11 @@ class TestimonialController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Testimonial $testimonial)
     {
-        //
+        // dd($id);
+        $testimonials = Testimonial::all();
+        return view('admin.about.Testimonial.testimonial', compact('testimonial','testimonials'));
     }
 
     /**
