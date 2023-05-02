@@ -32,14 +32,20 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Brandon Jacob</td>
-            <td>Designer</td>
-            <td>28</td>
-            <td><button class="btn btn-danger">DELETE</button></td>
-            <td><button class="btn btn-primary">EDIT</button></td>
-          </tr>
+            @foreach ($OurServices as $key => $item)
+                <tr>
+                <th scope="row">{{$key+1}}</th>
+                <th scope="row"><img src="{{$item->photo}}" alt="" width="50px"></th>
+                <td>{{$item->tittle}}</td>
+                <td>{{$item->description}}</td>
+                <form action="{{route('OurServices.destroy',['OurService' => $item->id])}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <td><button class="btn btn-danger">DELETE</button></td>
+                </form>
+                <td><button class="btn btn-primary">EDIT</button></td>
+                </tr>
+            @endforeach
         </tbody>
       </table>
     </div>

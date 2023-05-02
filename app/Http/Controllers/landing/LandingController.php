@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Featured;
 use App\Models\Action;
+use App\Models\OurServices;
 use App\Models\Question;
 use App\Models\Team_members;
 use App\Models\Testimonial;
@@ -34,8 +35,9 @@ class LandingController extends Controller
     {
         $question = Question::all();
         $featured = Featured::all();
+        $OurServices = OurServices::all();
         $aboutus = AboutUs::all();
-        return view('landing.servicess.service_index', compact('featured','question','aboutus'));
+        return view('landing.servicess.service_index', compact('featured','question','aboutus','OurServices'));
     }
 
     // public function packing()

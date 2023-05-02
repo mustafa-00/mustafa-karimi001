@@ -13,7 +13,8 @@ class OurServicesController extends Controller
      */
     public function index()
     {
-        return view('admin.servicess.OurServices.ourservices');
+        $OurServices = OurServices::all();
+        return view('admin.servicess.OurServices.OurServices',compact('OurServices'));
     }
 
     /**
@@ -49,9 +50,7 @@ class OurServicesController extends Controller
         }
         $OurService->save();
         session()->flash('success','Record has been saved successfuly!');
-        return redirect('admin/ourservices');
-
-
+        return view('admin.servicess.OurServices.ourservices');
     }
 
     /**
@@ -81,8 +80,8 @@ class OurServicesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy()
     {
-        //
+
     }
 }
