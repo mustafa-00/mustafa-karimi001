@@ -16,7 +16,9 @@
         </a>
         <ul id="home-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li class="nav-item">
-
+            <a href="{{route('Action.index')}}">
+                <i class="bi bi-circle"></i><span>Action</span>
+            </a>
           </li>
         </ul>
       </li>
