@@ -8,15 +8,13 @@
 
     <section id="call-to-action" class="call-to-action">
       <div class="container" data-aos="zoom-out">
-        @foreach ($action as $item)
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
-                <h3>{{$item->tittle}}</h3>
-                <p>{{$item->description}}</p>
+                <h3>tittle</h3>
+                <p>description</p>
                 <a class="cta-btn" href="#">Call To Action</a>
             </div>
         </div>
-        @endforeach
       </div>
     </section>
 
