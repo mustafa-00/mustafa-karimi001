@@ -61,11 +61,11 @@ class ActionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit( Action $action)
+    public function edit(Action $action)
     {
         // dd($id);
         $actions = Action::all();
-        return view('admin.home.action' ,compact('action','actions'));
+        return view('admin.home.action',compact('action','actions'));
 
     }
 

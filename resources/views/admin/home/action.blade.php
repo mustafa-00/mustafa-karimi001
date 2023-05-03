@@ -24,7 +24,7 @@
       <form class="row g-3" action="{{ route('Action.store') }}" method="POST">
         @csrf
         <div class="col-12">
-          <input type="text" name="tittle" class="form-control" id="inputNanme4" value="{{ isset($action) ? $action->tittle : old('tittle')}}">
+          <input type="text" name="tittle" class="form-control" id="inputNanme4" value="{{ isset($action) ? $action->tittle : old('tittle') }}">
           <label for="inputNanme4" class="form-label">Tittle</label>
           @error('tittle')
             <div class="alert alert-danger">
@@ -83,7 +83,7 @@
                     <button class="btn btn-danger">DELETE</button>
                 </form>
               </td>
-              <td><a class="btn btn-primary" href="{{ route('Action.edit', ['Action' => $item->id]) }}">EDIT</a></td>
+              <td><a class="btn btn-primary" href="{{ route('Action.edit',['Action' => $item->id]) }}">EDIT</a></td>
             </tr>
             @endforeach
         </tbody>
