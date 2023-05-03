@@ -18,7 +18,7 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Vertical Form</h5>
-      <form class="row g-3" action="{{ isset($action) ? route('Action.update',['action' => $action->id]) : route('Action.store') }}" method="POST">
+      <form class="row g-3" action="{{ isset($action) ? route('Action.update',['Action' => $action->id]) : route('Action.store') }}" method="POST">
         @csrf
         @if (isset($action))
         @method('put')
