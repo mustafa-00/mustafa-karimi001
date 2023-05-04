@@ -76,7 +76,7 @@ class AboutUsController extends Controller
             'description' => $request->description
         ]);
         session()->flash('success','Record has been edited succesfuly!');
-        return redirect('admin/aboutus');
+        return redirect('admin/about');
     }
 
     /**
