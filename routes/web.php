@@ -40,10 +40,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::resource('contact', ContactController::class);
     Route::resource('post',PostController::class);
     Route::resource('featured',FeaturedController::class);
-    Route::resource('OurServices',OurServicesController::class);
-    Route::resource('Action',ActionController::class);
-    Route::resource('Pricing',PricingController::class);
-    Route::resource('Contact',ContactController::class);
+    Route::resource('ourservices',OurServicesController::class);
+    Route::resource('action',ActionController::class);
+    Route::resource('pricing',PricingController::class);
+    Route::resource('contact',ContactController::class);
 
 });
 

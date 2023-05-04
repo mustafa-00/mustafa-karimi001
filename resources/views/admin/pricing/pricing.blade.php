@@ -18,8 +18,11 @@
 <div class="card">
     <div class="card-body">
       <h5 class="card-title">Floating labels Form</h5>
-      <form class="row g-3" action="{{route('Pricing.store')}}" method="POST">
+      <form class="row g-3" action="{{ isset($pricing) ? route('pricing.update',['pricing'=> $pricing->id]) : route('pricing.store')}}" method="POST">
         @csrf
+        @if ($pricing)
+        @method('put')
+        @endif
         <div class="col-md-6">
           <div class="form-floating">
             <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="tittle" value="{{ isset($pricing) ? $pricing->tittle : old('tittle')}}">

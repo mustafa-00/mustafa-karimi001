@@ -18,7 +18,7 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Vertical Form</h5>
-      <form class="row g-3" action="{{ isset($action) ? route('Action.update',['Action' => $action->id]) : route('Action.store') }}" method="POST">
+      <form class="row g-3" action="{{ isset($action) ? route('action.update',['action' => $action->id]) : route('action.store') }}" method="POST">
         @csrf
         @if (isset($action))
         @method('put')
@@ -44,7 +44,7 @@
         </div>
 
         <div class="text-center">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn {{isset($action) ? "btn-success" : "btn-primary"}} btn-primary">{{isset($action) ? "Update" : "Store"}}</button>
           <button type="reset" class="btn btn-secondary">Reset</button>
         </div>
       </form>
@@ -72,12 +72,12 @@
                 <th scope="row">{{$key+1}}</th>
                 <td>{{$item->tittle}}</td>
                 <td>{{$item->description}}</td>
-                    <form action="{{route('Action.destroy',['Action' => $item->id])}}" method="POST">
+                    <form action="{{route('action.destroy',['action' => $item->id])}}" method="POST">
                         @csrf
                         @method('delete')
                         <td><button class="btn btn-danger">DELETE</button></td>
                     </form>
-                <td><a class="btn btn-primary" href="{{route('Action.edit',['Action' => $item->id])}}">EDIT</a></td>
+                <td><a class="btn btn-primary" href="{{route('action.edit',['action' => $item->id])}}">EDIT</a></td>
                 </tr>
             @endforeach
         </tbody>

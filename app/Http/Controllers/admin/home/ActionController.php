@@ -65,9 +65,15 @@ class ActionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Action $action)
     {
-        //
+        // dd($request->all());
+        $action->update([
+            'tittle' => $request->tittle,
+            'description' => $request->description
+        ]);
+        session()->flash('success','Record has been updated successfuly!');
+        return redirect('admin/action');
     }
 
     /**

@@ -16,7 +16,7 @@
         </a>
         <ul id="home-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li class="nav-item">
-            <a href="{{route('Action.index')}}">
+            <a href="{{route('action.index')}}">
                 <i class="bi bi-circle"></i><span>Action</span>
             </a>
           </li>
@@ -71,7 +71,7 @@
         </a>
         <ul id="pricing-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{route('Pricing.index')}}">
+                <a class="nav-link collapsed" href="{{route('pricing.index')}}">
                   <i class="bi bi-circle"></i>
                   <span>Pricing</span>
                 </a>
