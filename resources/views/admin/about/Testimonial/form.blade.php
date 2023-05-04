@@ -21,9 +21,8 @@
             <h5 class="card-title d-flex">Table with hoverable rows</h5>
             <a class="btn btn-primary" href="{{route('testimonial.index')}}">Testimonial Table</a>
 
-            <form class="row g-3" action="{{route('testimonial.store')}}" method="POST" enctype="multipart/form-data">
+            <form class="row g-3" action="{{isset($testimonial) ? route('testimonial.update',['testimonial' => $testimonial->id]) : route('testimonial.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-
                 <div class="col-md-4">
                     <div>
                         <label for="inputName5" class="form-label">photo</label>

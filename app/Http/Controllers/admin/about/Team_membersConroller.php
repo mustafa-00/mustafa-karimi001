@@ -38,18 +38,18 @@ class Team_membersConroller extends Controller
             'description' => 'required|min:10|max:255'
         ]);
 
-        $team_members = new Team_members();
-        $team_members['name'] = $request->name;
-        $team_members['field'] = $request->field;
-        $team_members['description'] = $request->description;
+        $team_member = new Team_members();
+        $team_member['name'] = $request->name;
+        $team_member['field'] = $request->field;
+        $team_member['description'] = $request->description;
 
         if($request->photo){
             date_default_timezone_set("Asia/Kabul");
-            $fileName = 'team_members_'.date('Ymd-His').'_'.rand(10,100000).'.'.$request->photo->extension();
-            $request->photo->storeAs("public/team_members",$fileName);
-            $team_members['photo'] = "storage/team_members/$fileName";
+            $fileName = 'team_member_'.date('Ymd-His').'_'.rand(10,100000).'.'.$request->photo->extension();
+            $request->photo->storeAs('public/team_member',$fileName);
+            $team_member['photo'] = "/storage/team_member/$fileName";
         }
-        $team_members->save();
+        $team_member->save();
         session()->flash('success','Record has been saved successfuly!');
         return redirect('admin/team_members');
 
@@ -83,10 +83,10 @@ class Team_membersConroller extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Team_members $team_members)
+    public function destroy(Team_members $team_member)
     {
-        @unlink(public_path().'/'.$team_members->photo);
-        $team_members->delete();
+        @unlink(public_path().'/'.$team_member->photo);
+        $team_member->delete();
         session()->flash('error','Record has been deleted successfuly!');
         return back();
     }
