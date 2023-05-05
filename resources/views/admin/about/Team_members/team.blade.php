@@ -37,7 +37,7 @@
             @foreach ($team_memberses as $key => $item)
                 <tr>
                     <th scope="row">{{$key+1}}</th>
-                    <th scope="row"><img src="{{ $item->photo }}" alt="" width="50px"></th>
+                    <th><img src="{{ $item->photo }}" alt="" width="50px"></th>
                     <td>{{$item->name}}</td>
                     <td>{{$item->field}}</td>
                     <td>{{$item->description}}</td>

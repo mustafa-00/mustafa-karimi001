@@ -20,7 +20,7 @@
       <h5 class="card-title">Floating labels Form</h5>
       <form class="row g-3" action="{{ isset($pricing) ? route('pricing.update',['pricing'=> $pricing->id]) : route('pricing.store')}}" method="POST">
         @csrf
-        @if ($pricing)
+        @if(isset($pricing))
         @method('put')
         @endif
         <div class="col-md-6">
@@ -60,7 +60,7 @@
         </div>
 
         <div class="text-center">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn {{ isset($pricing) ? "btn-success" : "btn-primary" }}">{{ isset($pricing) ? "Update" : "Store" }}</button>
           <button type="reset" class="btn btn-secondary">Reset</button>
         </div>
       </form>
@@ -89,12 +89,12 @@
                 <td>{{$item->tittle}}</td>
                 <td>{{$item->price}}</td>
                 <td>{{$item->description}}</td>
-                <form action="{{route('Pricing.destroy',['Pricing'=> $item->id])}}" method="POST">
+                <form action="{{route('pricing.destroy',['pricing' => $item->id])}}" method="POST">
                     @csrf
                     @method('delete')
                     <td><button class="btn btn-danger">DELETE</button></td>
                 </form>
-                <td><a class="btn btn-primary" href="{{route('Pricing.edit',['Pricing'=> $item->id])}}">EDIT</a></td>
+                <td><a class="btn btn-primary" href="{{route('pricing.edit',['pricing'=> $item->id])}}">EDIT</a></td>
                 </tr>
             @endforeach
         </tbody>
