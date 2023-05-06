@@ -8,10 +8,10 @@
                     <h4><sup>$</sup>{{$item->price}}<span>/ month</span></h4>
                     <ul>
                         <li><i class="bi bi-check"></i>{{$item->description}}</li>
-                        <li><i class="bi bi-check"></i>{{$item->description}}</li>
-                        <li><i class="bi bi-check"></i>{{$item->description}}</li>
+                        {{-- <li><i class="bi bi-check"></i>{{$item->description}}</li>
+                        <li><i class="bi bi-check"></i>{{$item->description}}</li> --}}
                         <li class="na"><i class="bi bi-x"></i> <span>{{$item->description}}</span></li>
-                        <li class="na"><i class="bi bi-x"></i> <span>{{$item->description}}</span></li>
+                        {{-- <li class="na"><i class="bi bi-x"></i> <span>{{$item->description}}</span></li> --}}
                     </ul>
                     <a href="#" class="buy-btn">Buy Now</a>
                     </div>

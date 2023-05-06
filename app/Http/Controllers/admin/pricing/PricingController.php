@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\admin\pricing;
 
-
 use App\Http\Controllers\Controller;
 use App\Models\Pricings;
 use Illuminate\Http\Request;
@@ -54,7 +53,7 @@ class PricingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pricings $pricing )
+    public function edit(Pricings $pricing)
     {
         // dd($id);
         $pricings = Pricings::all();
@@ -64,11 +63,11 @@ class PricingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pricing $pricing)
+    public function update(Request $request, pricings $pricing)
     {
         $pricing->update([
             'tittle' => $request->tittle,
-            'icon' => $request->icon,
+            'price' => $request->price,
             'description' => $request->description
         ]);
         session()->flash('success','Record has been updated successfuly!');
