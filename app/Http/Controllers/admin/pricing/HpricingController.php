@@ -3,16 +3,18 @@
 namespace App\Http\Controllers\admin\pricing;
 
 use App\Http\Controllers\Controller;
+use App\Models\Hpricing;
 use Illuminate\Http\Request;
 
-class HorizintalpricingController extends Controller
+class HpricingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $hprices = Hpricing::all();
+        return view('admin.pricing.hpricing',compact('hprices'));
     }
 
     /**
@@ -28,7 +30,18 @@ class HorizintalpricingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tittle' => 'required|min:5|max:255',
+            'price' => 'required|min:1|max:255',
+            'markeddescription' => 'required|min:5|max:255',
+            'unmarkeddescription' => 'required|min:5|max:255'
+        ]);
+
+        // dd($request->all());
+
+        Hpricing::create($request->all());
+        session()->flash('success','Record has been saved successfuly!');
+        return back();
     }
 
     /**

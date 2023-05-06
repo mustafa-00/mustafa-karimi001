@@ -75,6 +75,11 @@
                   <i class="bi bi-circle"></i>
                   <span>Pricing</span>
                 </a>
+
+                <a class="nav-link collapsed" href="{{route('hpricing.index')}}">
+                  <i class="bi bi-circle"></i>
+                  <span>HorizintalPricing</span>
+                </a>
             </li>
         </ul>
       </li>
