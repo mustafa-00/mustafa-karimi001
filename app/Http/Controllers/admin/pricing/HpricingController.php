@@ -55,17 +55,26 @@ class HpricingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Hpricing $hpricing)
     {
-        //
+        // dd($id);
+        $hprices = Hpricing::all();
+        return view('admin.pricing.hpricing',compact('hpricing','hprices'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Hpricing $hpricing)
     {
-        //
+        $hpricing->update([
+            'tittle' => $request->tittle,
+            'price' => $request->price,
+            'markeddescription' => $request->markeddescription,
+            'unmarkeddescription' => $request->unmarkeddescription
+        ]);
+        session()->flash('success','Record has been edited successfuly!');
+        return redirect('admin/hpricing');
     }
 
     /**
@@ -73,6 +82,8 @@ class HpricingController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Hpricing::find($id)->delete();
+        session()->flash('success','Record has been deleted successfuly!');
+        return back();
     }
 }

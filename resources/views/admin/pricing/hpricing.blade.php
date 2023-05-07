@@ -20,11 +20,14 @@
     <div class="card-body">
       <h5 class="card-title">Floating labels Form</h5>
 
-      <form class="row g-3" action="{{ route('hpricing.store') }}" method="POST">
+      <form class="row g-3" action="{{ isset($hpricing) ? route('hpricing.update',['hpricing' => $hpricing->id]) : route('hpricing.store') }}" method="POST">
         @csrf
+        @if (isset($hpricing))
+            @method('put')
+        @endif
         <div class="col-md-6">
           <div class="form-floating">
-            <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="Your Tittle" value="{{ old('tittle') }}">
+            <input type="text" name="tittle" class="form-control" id="floatingName" placeholder="Your Tittle" value="{{ isset($hpricing) ? $hpricing->tittle : old('tittle') }}">
             <label for="floatingName">Tittle</label>
             @error('tittle')
                 <div class="alert alert-danger">
@@ -36,7 +39,7 @@
 
         <div class="col-md-6">
           <div class="form-floating">
-            <input type="number" name="price" class="form-control" id="floatingEmail" placeholder="Your Price" value="{{ old('price') }}">
+            <input type="number" name="price" class="form-control" id="floatingEmail" placeholder="Your Price" value="{{ isset($hpricing) ? $hpricing->price : old('price') }}">
             <label for="floatingEmail">Pricing</label>
             @error('price')
                 <div class="alert alert-danger">
@@ -48,7 +51,7 @@
 
         <div class="col-md-6">
           <div class="form-floating">
-            <textarea type="text" name="markeddescription" class="form-control" id="floatingPassword" placeholder="Your Description">{{ old('markeddescription') }}</textarea>
+            <textarea type="text" name="markeddescription" class="form-control" id="floatingPassword" placeholder="Your Description">{{ isset($hpricing) ? $hpricing->markeddescription : old('markeddescription') }}</textarea>
             <label for="floatingPassword">MarkedDescription</label>
             @error('markeddescription')
                 <div class="alert alert-danger">
@@ -60,7 +63,7 @@
 
         <div class="col-md-6">
             <div class="form-floating">
-              <textarea type="text" name="unmarkeddescription" class="form-control" id="floatingPassword" placeholder="Your Description">{{ old('unmarkeddescription') }}</textarea>
+              <textarea type="text" name="unmarkeddescription" class="form-control" id="floatingPassword" placeholder="Your Description">{{ isset($hpricing) ? $hpricing->unmarkeddescription : old('unmarkeddescription') }}</textarea>
               <label for="floatingPassword">UnmarkedDescription</label>
               @error('unmarkeddescription')
                 <div class="alert alert-danger">
@@ -70,7 +73,7 @@
             </div>
           </div>
         <div class="text-center">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn {{isset($hpricing) ? "btn btn-success" : "btn btn-primary"}}">{{isset($hpricing) ? "Update" : "Store"}}</button>
           <button type="reset" class="btn btn-secondary">Reset</button>
         </div>
       </form>
@@ -103,12 +106,12 @@
                 <td>{{ $item->price }}</td>
                 <td>{{ $item->markeddescription }}</td>
                 <td>{{ $item->unmarkeddescription }}</td>
-                    <form action="{{route('hpricing.destroy')}}" method="POST">
+                    <form action="{{route('hpricing.destroy',['hpricing' => $item->id])}}" method="POST">
                         @csrf
                         @method('delete')
                         <td><button class="btn btn-danger">Delete</button></td>
                     </form>
-                <td><button class="btn btn-primary">Edit</button></td>
+                <td><a class="btn btn-primary" href="{{route('hpricing.edit',['hpricing' => $item->id])}}">Edit</a></td>
                 </tr>
             @endforeach
         </tbody>
