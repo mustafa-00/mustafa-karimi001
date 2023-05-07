@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Featured;
 use App\Models\Action;
+use App\Models\Hpricing;
 use App\Models\Pricings;
 use App\Models\Question;
 use App\Models\Team_members;
@@ -47,7 +48,8 @@ class LandingController extends Controller
     public function pricing()
     {
         $pricing = Pricings::all();
-        return view('landing.pricing.pricing_index',compact('pricing'));
+        $hprices = Hpricing::all();
+        return view('landing.pricing.pricing_index',compact('pricing','hprices'));
     }
 
     public function contact()

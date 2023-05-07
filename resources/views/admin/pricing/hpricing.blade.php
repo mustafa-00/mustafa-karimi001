@@ -103,13 +103,16 @@
                 <td>{{ $item->price }}</td>
                 <td>{{ $item->markeddescription }}</td>
                 <td>{{ $item->unmarkeddescription }}</td>
-                <td><button class="btn btn-danger">Delete</button></td>
+                    <form action="{{route('hpricing.destroy')}}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <td><button class="btn btn-danger">Delete</button></td>
+                    </form>
                 <td><button class="btn btn-primary">Edit</button></td>
                 </tr>
             @endforeach
         </tbody>
       </table>
-
     </div>
   </div>
 
