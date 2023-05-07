@@ -20,20 +20,36 @@
     <div class="card-body">
       <h5 class="card-title">OurServices Form</h5>
 
-      <form class="row g-3">
+      <form class="row g-3" action="{{route('ourservices.store')}}" method="POST">
+        @csrf
         <div class="col-md-6">
           <label for="inputName5" class="form-label">Photo</label>
           <input type="file" name="photo" class="form-control" id="inputName5">
+          @error('photo')
+            <div class="alert alert-danger">
+                {{$message}}
+            </div>
+          @enderror
         </div>
 
         <div class="col-md-6">
-          <label for="inputEmail5" class="form-label">Tittle</label>
-          <input type="text" name="tittle" class="form-control" id="inputEmail5">
+            <label for="inputName5" class="form-label">Tittle</label>
+            <input type="text" name="tittle" class="form-control" id="inputName5">
+            @error('tittle')
+              <div class="alert alert-danger">
+                  {{$message}}
+              </div>
+            @enderror
         </div>
 
         <div class="col-md-12">
           <label for="inputPassword5" class="form-label">Description</label>
-          <textarea type="text" name="description" class="form-control" id="inputPassword5"></textarea>
+          <textarea name="description" class="form-control" id="inputPassword5"></textarea>
+          @error('description')
+            <div class="alert alert-danger">
+                {{$message}}
+            </div>
+          @enderror
         </div>
 
         <div class="text-center">
@@ -54,21 +70,25 @@
         <thead>
           <tr>
             <th scope="col">ID</th>
+            <th scope="col">PHOTO</th>
             <th scope="col">TITTLE</th>
-            <th scope="col">DSCRIPTION</th>
+            <th scope="col">DESCRIPTION</th>
             <th scope="col">ACTION</th>
             <th scope="col">ACTION</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Brandon Jacob</td>
-            <td>Designer</td>
-            <td><button class="btn btn-danger">Delete</button></td>
-            <td><button class="btn btn-primary">Edit</button></td>
-          </tr>
+            @foreach ($ourservices as $key => $item)
+                <tr>
+                    <th scope="row">{{$key+1}}</th>
+                    <td><img src="{{$item->photo}}" alt=""></td>
+                    <td>{{$item->tittle}}</td>
+                    <td>{{$item->description}}</td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                    <td><button class="btn btn-primary">Edit</button></td>
+                </tr>
+            @endforeach
         </tbody>
       </table>
     </div>
