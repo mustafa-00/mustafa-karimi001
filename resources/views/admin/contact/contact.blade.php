@@ -10,7 +10,7 @@
         <li class="breadcrumb-item active">contact</li>
       </ol>
     </nav>
-  </div>
+</div>
 
 
   <!-- Floating Labels Form -->
@@ -61,7 +61,6 @@
           <button type="reset" class="btn btn-secondary">Reset</button>
         </div>
       </form>
-
     </div>
   </div>
 @endsection

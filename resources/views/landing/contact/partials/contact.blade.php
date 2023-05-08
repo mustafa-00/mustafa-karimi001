@@ -33,7 +33,7 @@
         </div>
 
         <div class="col-lg-8">
-          <form action="{{ route('') }}" method="POST" role="form" class="php-email-form">
+          <form role="form" class="php-email-form">
             @csrf
             <div class="row">
               <div class="col-md-6 form-group">
