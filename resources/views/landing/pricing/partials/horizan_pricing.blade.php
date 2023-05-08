@@ -1,5 +1,5 @@
 <section id="horizontal-pricing" class="horizontal-pricing pt-0">
-    <div class="container" data-aos="fade-up">
+    <div class="container row mx-auto" data-aos="fade-up">
 
       <div class="section-header">
         <span>Horizontal Pricing</span>

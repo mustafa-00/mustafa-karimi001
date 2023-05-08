@@ -1,6 +1,10 @@
 
 <section id="featured-services" class="featured-services">
     <div class="container">
+        <div class="section-header">
+            <span>Featured</span>
+            <h2>Featured</h2>
+        </div>
         <div class="row gy-4">
             @foreach ($featured as $item)
                 <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">

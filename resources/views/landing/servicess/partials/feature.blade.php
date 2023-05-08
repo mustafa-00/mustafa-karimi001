@@ -1,10 +1,10 @@
 <section id="features" class="features">
-    <div class="container " >
+    <div class="container" >
         <div class="section-header">
             <span>Feature</span>
             <h2>Feature</h2>
-          </div>
-          @foreach ($feature as $item)
+        </div>
+        @foreach ($feature as $item)
             <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
                 <div class="col-md-5">
                 <img src="{{ $item->photo }}" class="img-fluid" alt="">
@@ -21,7 +21,6 @@
                 </ul>
                 </div>
             </div>
-            <!-- Features Item -->
-          @endforeach
+            @endforeach
     </div>
   </section>
