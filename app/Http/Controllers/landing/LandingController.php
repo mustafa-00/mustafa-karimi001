@@ -39,6 +39,7 @@ class LandingController extends Controller
         $featured = Featured::all();
         $aboutus = AboutUs::all();
         $ourservice = Ourservices::all();
+        $feature = Features::all();
         return view('landing.servicess.service_index', compact('featured','question','aboutus','ourservice'));
     }
 

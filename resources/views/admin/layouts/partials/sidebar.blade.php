@@ -65,6 +65,11 @@
                   <i class="bi bi-circle"></i>
                   <span>OurServices</span>
                 </a>
+
+                <a class="nav-link collapsed" href="{{route('feature.index')}}">
+                  <i class="bi bi-circle"></i>
+                  <span>Feature</span>
+                </a>
             </li>
         </ul>
       </li>

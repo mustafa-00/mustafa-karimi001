@@ -12,6 +12,7 @@ use App\Http\Controllers\admin\PostController;
 use App\Http\Controllers\admin\services\OurServicesController;
 use App\Http\Controllers\admin\pricing\PricingController;
 use App\Http\Controllers\admin\pricing\HpricingController;
+use App\Http\Controllers\admin\services\FeatureController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\landing\LandingController;
@@ -45,6 +46,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::resource('action',ActionController::class);
     Route::resource('pricing',PricingController::class);
     Route::resource('hpricing',HpricingController::class);
+    Route::resource('feature',FeatureController::class);
     Route::resource('contact',ContactController::class);
 
 });
