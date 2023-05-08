@@ -20,10 +20,10 @@
     <div class="card-body">
       <h5 class="card-title">OurServices Form</h5>
 
-      <form class="row g-3" action="{{ isset($ourservice) ? route('ourservices.update',['ourservice' => $ourservice->id]) : route('ourservices.store')}}" method="POST" enctype="multipart/form-data">
+      <form class="row g-3" action="{{ isset($ourservice) ? route('ourservice.update',['ourservice' => $ourservice->id]) : route('ourservice.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        @if($ourservices)
-            @method('put')
+        @if (isset($ourservice))
+        @method('put')
         @endif
         <div class="col-md-6">
           <label for="inputName5" class="form-label">Photo</label>
@@ -88,12 +88,12 @@
                     <td><img src="{{$item->photo}}" alt="" style="width: 50px""></td>
                     <td>{{$item->tittle}}</td>
                     <td>{{$item->description}}</td>
-                        <form action="{{ route('ourservices.destroy',['ourservice' => $item->id]) }}" method="POST">
+                        <form action="{{ route('ourservice.destroy',['ourservice' => $item->id]) }}" method="POST">
                             @csrf
                             @method('delete')
                             <td><button class="btn btn-danger">Delete</button></td>
                         </form>
-                    <td><a class="btn btn-primary" href="{{ route('ourservices.edit',['ourservice' => $item->id]) }}">Edit</a></td>
+                    <td><a class="btn btn-primary" href="{{ route('ourservice.edit',['ourservice' => $item->id]) }}">Edit</a></td>
                 </tr>
             @endforeach
         </tbody>

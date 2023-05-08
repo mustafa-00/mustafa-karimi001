@@ -51,7 +51,7 @@ class OurservicesController extends Controller
         // dd('photo');
         $ourservice->save();
         session()->flash('success','Record has been saved successfuly!');
-        return redirect('admin/ourservices');
+        return redirect('admin/ourservice');
 
 
     }

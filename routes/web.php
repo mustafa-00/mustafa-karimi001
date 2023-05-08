@@ -42,7 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::resource('contact', ContactController::class);
     Route::resource('post',PostController::class);
     Route::resource('featured',FeaturedController::class);
-    Route::resource('ourservices',OurServicesController::class);
+    Route::resource('ourservice',OurServicesController::class);
     Route::resource('action',ActionController::class);
     Route::resource('pricing',PricingController::class);
     Route::resource('hpricing',HpricingController::class);

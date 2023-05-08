@@ -61,7 +61,7 @@
                   <span>Featured</span>
                 </a>
 
-                <a class="nav-link collapsed" href="{{route('ourservices.index')}}">
+                <a class="nav-link collapsed" href="{{route('ourservice.index')}}">
                   <i class="bi bi-circle"></i>
                   <span>OurServices</span>
                 </a>
