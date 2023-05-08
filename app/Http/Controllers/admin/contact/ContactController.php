@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin\contact;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contacts;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -12,7 +14,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contacts::all();
+        return view('admin.contact.contact',compact('contacts'));
     }
 
     /**
@@ -28,7 +31,15 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'icon' => 'required',
+            'tittle' => 'required|min:5|max:255',
+            'description' => 'required|min:10|max:255'
+        ]);
+
+        Contacts::create($request->all());
+        session()->flash('success','Record has been saved successfuly!');
+        return back();
     }
 
     /**
@@ -42,17 +53,26 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Contacts $contact)
     {
-        //
+        $contacts = Contacts::all();
+        return view('admin.contact.contact',compact('contact','contacts'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Contacts $contact)
     {
-        //
+        $contact->update([
+            'icon' => $request->icon,
+            'tittle' => $request->tittle,
+            'description' => $request->description
+        ]);
+        session()->flash('success','Record has been Updated successfuly!');
+        return redirect('admin/contact');
+
     }
 
     /**
@@ -60,6 +80,9 @@ class ContactController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Contacts::find($id)->delete();
+        session()->flash('success','Record has been Deleted successfuly!');
+        return back();
+
     }
 }

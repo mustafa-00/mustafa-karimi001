@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Featured;
 use App\Models\Action;
+use App\Models\Contacts;
 use App\Models\Features;
 use App\Models\Hpricing;
 use App\Models\Pricings;
@@ -58,6 +59,7 @@ class LandingController extends Controller
 
     public function contact()
     {
-        return view('landing.contact.contact_index');
+        $contact = Contacts::all();
+        return view('landing.contact.contact_index',compact('contact'));
     }
 }

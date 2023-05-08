@@ -6,51 +6,52 @@
       </div>
 
       <div class="row gy-4 mt-4">
-        <div class="col-lg-4">
-          <div class="info-item d-flex">
-            <i class="bi bi-geo-alt flex-shrink-0"></i>
-            <div>
-              <h4>Location:</h4>
-              <p>A108 Adam Street, New York, NY 535022</p>
+        @foreach ($contact as $item)
+            <div class="col-lg-4">
+                <div class="info-item d-flex">
+                    {!! $item->icon !!}
+                    <div>
+                        <h4>{{$item->tittle}}</h4>
+                        <p>{{$item->description}}</p>
+                    </div>
+                </div>
             </div>
-          </div><!-- End Info Item -->
+        @endforeach
 
-          <div class="info-item d-flex">
-            <i class="bi bi-envelope flex-shrink-0"></i>
-            <div>
-              <h4>Email:</h4>
-              <p>info@example.com</p>
-            </div>
-          </div><!-- End Info Item -->
 
-          <div class="info-item d-flex">
-            <i class="bi bi-phone flex-shrink-0"></i>
-            <div>
-              <h4>Call:</h4>
-              <p>+1 5589 55488 55</p>
-            </div>
-          </div><!-- End Info Item -->
-        </div>
+        <!-- Floating Labels Form -->
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Contact Form</h5>
 
-        <div class="col-lg-8">
-          <form role="form" class="php-email-form">
-            @csrf
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
-              </div>
-              <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
-              </div>
+              <form class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" name="name" class="form-control" id="floatingName" placeholder="Your Name">
+                    <label for="floatingName">Your Name</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="Your Email">
+                    <label for="floatingEmail">Your Email</label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" name="message" placeholder="Address" id="floatingTextarea" style="height: 100px;"></textarea>
+                    <label for="floatingTextarea">Message</label>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Send</button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+              </form>
             </div>
-            <div class="form-group mt-3">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-            </div>
-            <div class="form-group mt-3">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
         </div>
       </div>
     </div>
