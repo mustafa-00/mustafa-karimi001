@@ -1,5 +1,5 @@
 <section id="service" class="services pt-0">
-    <div class="container" data-aos="fade-up">
+    <div class="container row mx-auto" data-aos="fade-up">
         <div class="section-header">
             <span>Our Services</span>
             <h2>Our Services</h2>
