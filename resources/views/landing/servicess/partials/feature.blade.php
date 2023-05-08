@@ -4,25 +4,27 @@
             <span>Feature</span>
             <h2>Feature</h2>
           </div>
-      <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
-        <div class="col-md-5">
-          <img src="assets_landing/img/features-1.jpg" class="img-fluid" alt="">
-        </div>
-        <div class="col-md-7">
-          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-          <p class="fst-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
-          </p>
-          <ul>
-            <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="bi bi-check"></i> Ullam est qui quos consequatur eos accusamus.</li>
-          </ul>
-        </div>
-      </div><!-- Features Item -->
+          @foreach ($feature as $item)
+            <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
+                <div class="col-md-5">
+                <img src="{{ $item->photo }}" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7">
+                <h3>{{$item->tittle}}</h3>
+                <p class="fst-italic">
+                    {{$item->description}}
+                </p>
+                <ul>
+                    <li><i class="bi bi-check"></i>{{$item->markeddescription}}</li>
+                    <li><i class="bi bi-check"></i>{{$item->markeddescription}}</li>
+                    <li><i class="bi bi-check"></i>{{$item->markeddescription}}</li>
+                </ul>
+                </div>
+            </div>
+            <!-- Features Item -->
+          @endforeach
 
-      <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
+      {{-- <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
         <div class="col-md-5 order-1 order-md-2">
           <img src="assets_landing/img/features-2.jpg" class="img-fluid" alt="">
         </div>
@@ -71,7 +73,7 @@
             culpa qui officia deserunt mollit anim id est laborum
           </p>
         </div>
-      </div><!-- Features Item -->
+      </div><!-- Features Item --> --}}
 
     </div>
   </section>

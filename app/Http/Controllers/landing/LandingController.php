@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Featured;
 use App\Models\Action;
+use App\Models\Features;
 use App\Models\Hpricing;
 use App\Models\Pricings;
 use App\Models\Question;
@@ -40,7 +41,7 @@ class LandingController extends Controller
         $aboutus = AboutUs::all();
         $ourservice = Ourservices::all();
         $feature = Features::all();
-        return view('landing.servicess.service_index', compact('featured','question','aboutus','ourservice'));
+        return view('landing.servicess.service_index', compact('featured','question','aboutus','ourservice','feature'));
     }
 
     // public function packing()
