@@ -11,6 +11,7 @@ use App\Models\Pricings;
 use App\Models\Question;
 use App\Models\Team_members;
 use App\Models\Testimonial;
+use App\Models\Ourservices;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -37,7 +38,8 @@ class LandingController extends Controller
         $question = Question::all();
         $featured = Featured::all();
         $aboutus = AboutUs::all();
-        return view('landing.servicess.service_index', compact('featured','question','aboutus'));
+        $ourservice = Ourservices::all();
+        return view('landing.servicess.service_index', compact('featured','question','aboutus','ourservice'));
     }
 
     // public function packing()
