@@ -23,26 +23,43 @@
         <div class="card">
             <div class="card-body">
               <h5 class="card-title">Contact Form</h5>
+              @include('common.alert')
 
-              <form class="row g-3">
+              <form class="row g-3" action="{{ route('landcontact.store') }}" method="POST">
+                @csrf
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" name="name" class="form-control" id="floatingName" placeholder="Your Name">
+                    <input type="text" name="name" class="form-control" id="floatingName" placeholder="Your Name" value="{{ old('name') }}">
                     <label for="floatingName">Your Name</label>
+                    @error('name')
+                        <div class="alert alert-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="Your Email">
+                    <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="Your Email" value="{{ old('email') }}">
                     <label for="floatingEmail">Your Email</label>
+                    @error('email')
+                        <div class="alert alert-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                   </div>
                 </div>
 
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" name="message" placeholder="Address" id="floatingTextarea" style="height: 100px;"></textarea>
+                    <textarea class="form-control" name="message" placeholder="Address" id="floatingTextarea" style="height: 100px;">{{ old('message') }}</textarea>
                     <label for="floatingTextarea">Message</label>
+                    @error('message')
+                        <div class="alert alert-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                   </div>
                 </div>
 

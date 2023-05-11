@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\landing;
 
 use App\Http\Controllers\Controller;
+use App\Models\Landcontacts;
 use Illuminate\Http\Request;
 
 class LandcontactController extends Controller
@@ -28,7 +29,15 @@ class LandcontactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:5|max:255',
+            'email' => 'required|email|min:5|max:255',
+            'message' => 'required|min:10|max:255'
+        ]);
+
+        LandContacts::create($request->all());
+        session()->flash('success','Record has been saved successfuly!');
+        return back();
     }
 
     /**

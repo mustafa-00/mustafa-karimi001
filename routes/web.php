@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\about\QuestionController;
 use App\Http\Controllers\admin\about\Team_membersConroller;
 use App\Http\Controllers\admin\about\TestimonialController;
 use App\Http\Controllers\admin\contact\ContactController;
+use App\Http\Controllers\landing\LandcontactController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\home\ActionController;
 use App\Http\Controllers\admin\services\FeaturedController;
@@ -66,5 +67,6 @@ Route::get('about', [LandingController::class, 'about'])->name('about');
 Route::get('services', [LandingController::class, 'services'])->name('services');
 Route::get('pricing', [LandingController::class, 'pricing'])->name('pricing');
 Route::get('contact', [LandingController::class, 'contact'])->name('contact');
+Route::resource('landcontact', LandcontactController::class);
 
 
