@@ -12,7 +12,7 @@
       {{-- HOME --}}
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#home-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Home</span><i class="bi bi-chevron-down ms-auto"></i>
+            <i class="ri-home-smile-line"></i><span>Home</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="home-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li class="nav-item">
@@ -26,7 +26,7 @@
       {{-- ABOUT --}}
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#about-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>About</span><i class="bi bi-chevron-down ms-auto"></i>
+            <i class="ri-contacts-line"></i><span>About</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="about-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -52,7 +52,7 @@
       {{-- SERIVCES --}}
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#services-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Services</span><i class="bi bi-chevron-down ms-auto"></i>
+            <i class="ri-briefcase-4-line"></i><span>Services</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="services-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li class="nav-item">
@@ -77,7 +77,7 @@
       {{-- PRICING --}}
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#pricing-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>pricing</span><i class="bi bi-chevron-down ms-auto"></i>
+            <i class="ri-currency-line"></i><span>pricing</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="pricing-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li class="nav-item">
@@ -97,7 +97,7 @@
       {{-- CONTACT --}}
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#contact-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Contact</span><i class="bi bi-chevron-down ms-auto"></i>
+            <i class="ri-account-circle-line"></i><span>Contact</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="contact-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li class="nav-item">
