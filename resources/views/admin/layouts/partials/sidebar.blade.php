@@ -109,6 +109,15 @@
         </ul>
       </li>
 
+      {{-- Pages --}}
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li>
 
     </ul>
   </aside>
