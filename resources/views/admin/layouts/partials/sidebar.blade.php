@@ -113,11 +113,18 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link " href="{{ route('profile.index') }}">
+        <a class="nav-link " href="{{ route('profile') }}">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="{{ route('faq') }}">
+          <i class="bi bi-question-circle"></i>
+          <span>F.A.Q</span>
+        </a>
+    </li>
 
     </ul>
   </aside>

@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\about\Team_membersConroller;
 use App\Http\Controllers\admin\about\TestimonialController;
 use App\Http\Controllers\admin\contact\ContactController;
 use App\Http\Controllers\admin\ProfileController;
+use App\Http\Controllers\admin\FaqController;
 use App\Http\Controllers\landing\LandcontactController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\home\ActionController;
@@ -50,7 +51,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::resource('hpricing',HpricingController::class);
     Route::resource('feature',FeatureController::class);
     Route::resource('contact',ContactController::class);
-    Route::resource('profile',ProfileController::class);
+    Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('faq', [FaqController::class, 'index'])->name('faq');
 
 });
 
