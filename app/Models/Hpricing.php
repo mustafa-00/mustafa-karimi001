@@ -10,3 +10,4 @@ class Hpricing extends Model
     use HasFactory;
     protected $guarded = [];
 }
+
